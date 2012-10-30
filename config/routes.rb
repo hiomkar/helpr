@@ -1,4 +1,16 @@
 Helpr::Application.routes.draw do
+  resources :customers
+
+  resources :chats
+
+  resources :phrases
+
+  resources :agents
+
+  resources :admins
+
+  resources :businesses
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

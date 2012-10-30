@@ -1,0 +1,33 @@
+<h1>Listing chats</h1>
+
+<table>
+  <tr>
+    <th>Business</th>
+    <th>Customer</th>
+    <th>Keywords</th>
+    <th>Chat</th>
+    <th>Screenshots</th>
+    <th>Date of chat</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @chats.each do |chat| %>
+  <tr>
+    <td><%= chat.business_id %></td>
+    <td><%= chat.customer_id %></td>
+    <td><%= chat.keywords %></td>
+    <td><%= chat.chat %></td>
+    <td><%= chat.screenshots %></td>
+    <td><%= chat.date_of_chat %></td>
+    <td><%= link_to 'Show', chat %></td>
+    <td><%= link_to 'Edit', edit_chat_path(chat) %></td>
+    <td><%= link_to 'Destroy', chat, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Chat', new_chat_path %>

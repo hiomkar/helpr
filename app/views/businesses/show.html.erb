@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Admin:</b>
+  <%= @business.admin_id %>
+</p>
+
+<p>
+  <b>Biz name:</b>
+  <%= @business.biz_name %>
+</p>
+
+<p>
+  <b>Biz url:</b>
+  <%= @business.biz_url %>
+</p>
+
+<p>
+  <b>Existing biz url:</b>
+  <%= @business.existing_biz_url %>
+</p>
+
+<p>
+  <b>Start hour:</b>
+  <%= @business.start_hour %>
+</p>
+
+<p>
+  <b>End hour:</b>
+  <%= @business.end_hour %>
+</p>
+
+
+<%= link_to 'Edit', edit_business_path(@business) %> |
+<%= link_to 'Back', businesses_path %>
