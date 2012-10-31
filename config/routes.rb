@@ -1,4 +1,6 @@
 Helpr::Application.routes.draw do
+  devise_for :customers
+
   resources :customers
 
   resources :chats
