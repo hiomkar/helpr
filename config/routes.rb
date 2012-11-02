@@ -1,4 +1,8 @@
 Helpr::Application.routes.draw do
+  devise_for :agents
+  
+  devise_for :admins
+
   devise_for :customers
 
   resources :customers
