@@ -8,4 +8,9 @@ class Customer < ActiveRecord::Base
   # Setup accessible (or protected) attributes for your model
   attr_accessible :email, :password, :password_confirmation, :remember_me
   attr_accessible :first_name, :last_name, :phone
+
+  has_many :chats, dependent: :destroy
+
+  has_many :businesses, through: :chats
+
 end
