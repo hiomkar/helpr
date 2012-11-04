@@ -1,7 +1,10 @@
 Helpr::Application.routes.draw do
-  devise_for :agents
   
-  devise_for :admins
+  root :to => "home#home"
+  
+  devise_for :agents, :path => "home", :path_names => { :sign_in => 'home' }
+  
+  devise_for :admins, :path => "home", :path_names => { :sign_in => 'home' }
 
   devise_for :customers
 
@@ -74,7 +77,6 @@ Helpr::Application.routes.draw do
   # Note: This route will make all actions in every controller accessible via GET requests.
   # match ':controller(/:action(/:id))(.:format)'
 
-  root :to => "home#index"
 
 
 end
