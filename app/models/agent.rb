@@ -7,6 +7,6 @@ class Agent < ActiveRecord::Base
 
   # Setup accessible (or protected) attributes for your model
   attr_accessible :email, :password, :password_confirmation, :remember_me
-  attr_accessible :business_id, :first_name, :last_name, :password, :username
+  attr_accessible :business_id, :first_name, :last_name
   belongs_to :business
 end

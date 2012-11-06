@@ -12,6 +12,6 @@ class Agents::SessionsController < Devise::SessionsController
   end
   
   def after_sign_in_path_for(agents)
-    render "agents/index"
+    agents_path
   end
 end

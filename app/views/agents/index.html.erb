@@ -14,10 +14,11 @@
 
 <% @agents.each do |agent| %>
   <tr>
+
     <td><%= agent.business_id %></td>
+    <td><%= agent.email %></td>
     <td><%= agent.first_name %></td>
     <td><%= agent.last_name %></td>
-    <td><%= agent.username %></td>
     <td><%= agent.password %></td>
     <td><%= link_to 'Show', agent %></td>
     <td><%= link_to 'Edit', edit_agent_path(agent) %></td>
