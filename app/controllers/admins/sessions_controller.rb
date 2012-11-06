@@ -1,4 +1,4 @@
-module AdminsHelper
+class Admins::SessionsController < Devise::SessionsController
   def resource_name
     :admin
   end
@@ -9,5 +9,9 @@ module AdminsHelper
 
   def devise_mapping
     @devise_mapping ||= Devise.mappings[:admin]
+  end
+  
+  def after_sign_in_path_for(admins)
+    render "admins/index"
   end
 end

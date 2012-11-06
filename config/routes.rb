@@ -2,11 +2,13 @@ Helpr::Application.routes.draw do
   
   root :to => "home#home"
   
+  devise_for :agents, :controllers => { :sessions => "agents/sessions" }
+  
   devise_for :agents, :path => "home", :path_names => { :sign_in => 'home' }
   
-  #devise_for :admins, :path => "admins/registrations", :path_names => {:sign_up => 'new'}
+  devise_for :admins, :controllers => { :sessions => "admins/sessions" }
   
-  devise_for :admins, :path => "home", :path_names => { :sign_in => 'home' }
+  devise_for :admins, :path => "home", :path_names => { :login => 'home' }
 
   devise_for :customers
 
