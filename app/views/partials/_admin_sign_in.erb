@@ -1,6 +1,6 @@
 <div class="well">
 <h3>Admin Sign In</h3>
-<%= form_for(:admin, :as => :admin, :url => session_path(:admin)) do |f| %>
+<%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
   <div><%= f.label :email %>
   <%= f.email_field :email %></div>
 

@@ -1,37 +1,36 @@
 <div class="container-fluid">
-	
 	<br>
-	
+	<!-- logo -->
 	<div class="row-fluid" style="text-align: center;">
-		
 		<%= image_tag 'logo.png', :size => '300x300' %>
-		
 	</div>
-	
 	<br>
-	
+	<!-- logins for admin and agent -->
 	<div class="row-fluid">
-		
-		<div class="span2">&nbsp;</div>
-		
-		<div class="span4">
+		<div class="span3">&nbsp;</div>
+		<div class="span3">
 			<!-- admin sign in -->
 			<%= render "partials/admin_sign_in" %>
 		</div>
-		
-		<div class="span4">
+		<div class="span3">
 			<!-- agent sign in -->
 			<%= render "partials/agent_sign_in" %>
 		</div>
-		
-		<div class="span2">&nbsp;</div>
-		
+		<div class="span3">&nbsp;</div>
 	</div>
-	
+	<!-- business sign up -->
 	<div class="row-fluid">
-		<!-- business sign up -->
-		<h1>Sign up your business for our service!</h1>
+		<div class="span2">&nbsp;</div>
+			<div class="hero-unit span8">
+  				<h1>Sign Up Now...</h1>
+  				<p>for the best small business customer service application on the web.</p>
+  				<p>
+    			<a class="btn btn-primary btn-large">
+      				Sign Up
+    			</a>	
+  				</p>
+			</div>
+		<div class="span2">&nbsp;</div>
 	</div>
-	
-	
 </div>
+

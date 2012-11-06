@@ -1,5 +1,5 @@
-class AgentsController < ApplicationController
-  before_filter :authenticate_agent! 
+class AgentsController < ApplicationController 
+  before_filter :authenticate_agent!
  
   # GET /agents
   # GET /agents.json

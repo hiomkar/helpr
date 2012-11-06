@@ -4,6 +4,8 @@ Helpr::Application.routes.draw do
   
   devise_for :agents, :path => "home", :path_names => { :sign_in => 'home' }
   
+  #devise_for :admins, :path => "admins/registrations", :path_names => {:sign_up => 'new'}
+  
   devise_for :admins, :path => "home", :path_names => { :sign_in => 'home' }
 
   devise_for :customers
