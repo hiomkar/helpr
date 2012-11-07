@@ -15,11 +15,11 @@
 			<br> <br>
   				<h1>Sign Up Now...</h1>
   				<p>for the best small business customer service application on the web.</p>
-  				<p>
-    			<a class="btn btn-primary btn-large">
-      				Sign Up
-    			</a>	
-  				</p>
+    			<%= link_to(new_business_path) do %>
+					<button class="btn btn-primary btn-large">
+					<span> Sign Up</span>
+					</button>
+				<% end %>
 		</div>
 		<div class="span3">
 			<!-- agent sign in -->
