@@ -8,7 +8,8 @@ Helpr::Application.routes.draw do
   
   devise_for :admins, :controllers => { :sessions => "admins/sessions" }
   
-  devise_for :admins, :path => "home", :path_names => { :login => 'home' }
+  devise_for :admins, :path => "home", :path_names => { :sign_in => 'home' }
+  
 
   devise_for :customers
 

@@ -12,6 +12,6 @@ class Admins::SessionsController < Devise::SessionsController
   end
   
   def after_sign_in_path_for(admins)
-    render "admins/index"
+    admins_path
   end
 end
