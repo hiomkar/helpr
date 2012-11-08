@@ -40,12 +40,16 @@ class BusinessesController < ApplicationController
   # POST /businesses
   # POST /businesses.json
   def create
+    
+    # converts the time into a saveable format
+    params[:business].parse_time_select! :start_hour
+    params[:business].parse_time_select! :end_hour
+    #creates a new business
     @business = Business.new(params[:business])
 
     respond_to do |format|
       if @business.save
-        format.html { redirect_to @business, notice: 'Business was successfully created.' }
-        format.json { render json: @business, status: :created, location: @business }
+        format.html { redirect_to new_admin_registration_path, notice: 'Business was successfully created.' }
       else
         format.html { render action: "new" }
         format.json { render json: @business.errors, status: :unprocessable_entity }
