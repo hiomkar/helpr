@@ -2,16 +2,16 @@
 	<fieldset>
 		<%= f.input :biz_name, :label => 'Business Name' %>
 		<br>
-		<%= f.input :biz_url, :label => 'Business URL' %>
+		<%= f.input :biz_url, :label => 'Business URL', :as => :string %>
 		<p>Users will visit this page to chat with agents.</p>
 		<br>
-		<%= f.input :existing_biz_url, :label => 'Existing Business URL' %>
+		<%= f.input :existing_biz_url, :label => 'Existing Business URL', :as => :string %>
 		<p>Does your company have an existing website?</p>
 		<br>
 		<h4>Set Availability of Agents</h4>
 		<p>Round Up to Next 15 Minute Interval</p>
-		<%= f.input :start_hour, :combined => true, :minute_interval => 15, :time_separator => "" %>
-		<%= f.input :end_hour, :combined => true, :minute_interval => 15, :time_separator => "" %>
+		<%= f.input :start_hour, :default => Time.now.change(:hour => 9, :min => 00), :combined => true, :minute_interval => 15, :time_separator => "" %>
+		<%= f.input :end_hour, :default => Time.now.change(:hour => 17, :min => 00), :combined => true, :minute_interval => 15, :time_separator => "" %>
 		<br>
 		<%= f.submit :value => 'Create Business'%>
 	</fieldset>

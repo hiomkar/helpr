@@ -29,7 +29,7 @@ class Admin < ActiveRecord::Base
       "#{last_name}, #{first_name}"
    end
    
-   # Callback code 
+   # Callback method 
    private
    def reformat_phone
      phone = self.phone.to_s  # change to string in case input as all numbers 
