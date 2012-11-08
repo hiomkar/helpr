@@ -10,34 +10,7 @@ body
 * { outline: none; }
 a, a:active, a:visited { color: #3f8eda; font-weight: bold; text-decoration: none; border: 0; padding-bottom: 1px; }
 a:hover, a:visited:hover { border-bottom: 1px solid #3f8eda; }
-a.button:hover, a.button:visited:hover { border-bottom: none; }
 
-button, input[type=submit], input[type=button] {
-  background: url(/assets/button_bg.png) no-repeat top left;
-  border: none;
-  height: 24px;
-  padding: 0 0 2px 0;
-  width: 75px;
-  text-shadow: #264d7d 0px 1px 1px;
-  color: #ffffff;
-  cursor: pointer;
-  margin: 0;
-}
-button:disabled, button:disabled:hover {
-  cursor: default;
-  opacity: 0.5;
-}
-button:enabled:hover { background-position-y: -24px; }
-button:enabled:active { background-position-y: -48px; }
-button:enabled:focus { background-position-y: -48px; }
-
-input[type=text]
-{
-    padding: 5px;
-    font-weight: bold;
-    width: 200px;
-    margin-right: 10px;
-}
 
 /* == BOX == */
 #wrapper {
