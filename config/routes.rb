@@ -6,7 +6,7 @@ Helpr::Application.routes.draw do
   
   devise_for :agents, :path => "", :path_names => { :sign_in => '/' }
   
-  devise_for :admins, :controllers => { :sessions => "admins/sessions" }
+  devise_for :admins, :controllers => { :sessions => "admins/sessions", :registrations => "admins/registrations" }
   
   devise_for :admins, :path => "", :path_names => { :sign_in => '/' }
   

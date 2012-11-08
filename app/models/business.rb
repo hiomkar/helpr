@@ -1,6 +1,5 @@
 class Business < ActiveRecord::Base
-  attr_accessible :admin_id, :biz_name, :biz_url, :end_hour, :existing_biz_url, :start_hour
-
+  attr_accessible :admin_id, :biz_name, :biz_url, :end_hour, :existing_biz_url, :start_hour 
   # Callbacks
 
   # Relationships
@@ -11,6 +10,8 @@ class Business < ActiveRecord::Base
   has_one :admin, dependent: :destroy
 
   has_many :customers, through: :chats
+  
+  accepts_nested_attributes_for :admin
 
   # Validations
   validates_presence_of :biz_name, :biz_url, :existing_biz_url
