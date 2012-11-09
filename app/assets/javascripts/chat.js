@@ -34,27 +34,27 @@ $(document).ready(function()
 
 	// When somebody joins, pop a note to tell the user
 	presenceChannel.bind('pusher:member_added', function(member) {
-		$('#messages').append('<li class="note"><strong>' + member.chat_user.nickname + '</strong> joined the chat.</li>');
+		$('#messages').append('<li class="note"><strong>' + member.chat_user.first_name + '</strong> joined the chat.</li>');
 		scrollToTheTop();
 		updateCount(1);
 	});
 	
 	// When somebody leaves, pop a note to tell the user
 	presenceChannel.bind('pusher:member_removed', function(member) {
-		$('#messages').append('<li class="note"><strong>' + member.chat_user.nickname + '</strong> left the chat.</li>');
+		$('#messages').append('<li class="note"><strong>' + member.chat_user.first_name + '</strong> left the chat.</li>');
 		scrollToTheTop();
 		updateCount(-1);
 	});
 	
-	// When somebody updates their nickname, tell all the people including yourself
-	presenceChannel.bind('updated_nickname', function(member) {
+	// When somebody updates their first_name, tell all the people including yourself
+	presenceChannel.bind('updated_first_name', function(member) {
 		if(member.user_id == user_id)
 		{
-			$('#messages').append('<li class="note">You have updated your nickname to <strong>' + member.nickname + '</strong>.</li>');
+			$('#messages').append('<li class="note">You have updated your name to <strong>' + member.first_name + '</strong>.</li>');
 		}
 		else
 		{
-			$('#messages').append('<li class="note"><strong>' + member.old_nickname + '</strong> updated their nickname to <strong>' + member.nickname + '</strong>.</li>');
+			$('#messages').append('<li class="note"><strong>' + member.old_first_name + '</strong> updated their name to <strong>' + member.first_name + '</strong>.</li>');
 		}
 		scrollToTheTop();
 	});
@@ -92,7 +92,7 @@ $(document).ready(function()
 			
 		}
 		
-		$('#messages').append('<li class="' + you + 'just_added_id_' + message.id + '" style="display:none;"><strong>' + message.user.nickname + '</strong> said:<br />' + replaceURLWithHTMLLinks(message.message) + '</li>');
+		$('#messages').append('<li class="' + you + 'just_added_id_' + message.id + '" style="display:none;"><strong>' + message.user.first_name + '</strong> said:<br />' + replaceURLWithHTMLLinks(message.message) + '</li>');
 		$('#messages li.just_added_id_' + message.id).fadeIn();
 		scrollToTheTop();
 	});
@@ -101,7 +101,7 @@ $(document).ready(function()
 	presenceChannel.bind('typing_status', function(notification) {
 		if(notification.user.id == user_id) return false;
 		if(notification.status == "true") {
-			$('#messages').append('<li class="note" id="is_typing_'+ notification.user.id +'"><strong>' + notification.user.nickname + '</strong> is typing...</li>');
+			$('#messages').append('<li class="note" id="is_typing_'+ notification.user.id +'"><strong>' + notification.user.first_name + '</strong> is typing...</li>');
 		} else {
 			$('#messages #is_typing_' + notification.user.id).remove();
 		}
@@ -139,39 +139,39 @@ $(document).ready(function()
 		}
 	});
 	
-	var old_nickname = "";
-	$('#editNickname').click(function()
+	var old_first_name = "";
+	$('#editFirstname').click(function()
 	{
 		$('#title').fadeOut(200);
-		$('#nickname').fadeIn(200);
-		$('#saveNickname').fadeIn(200);
+		$('#first_name').fadeIn(200);
+		$('#saveFirstname').fadeIn(200);
 		$(this).hide();
-		old_nickname = $('#nickname').val();
+		old_first_name = $('#first_name').val();
 		return false;
 	});
 
-	$('#saveNickname').click(function()
+	$('#saveFirstname').click(function()
 	{
-		$('#nickname').attr("disabled", "disabled");
+		$('#first_name').attr("disabled", "disabled");
 		
-		if($('#nickname').val() != old_nickname) {
-			$.post('/api/update_nickname/', { 'chat_id': chat_id, 'user_id': user_id, 'nickname': $('#nickname').val() }, function(response) {
+		if($('#first_name').val() != old_first_name) {
+			$.post('/api/update_first_name/', { 'chat_id': chat_id, 'user_id': user_id, 'first_name': $('#first_name').val() }, function(response) {
 				if(response != "SAVED")
 				{
-					alert("There was an error updating your nickname, please try again.");
+					alert("There was an error updating your name, please try again.");
 				}
-				$('#nickname').hide();
-				$('#nickname').attr("disabled", "");
-				$('#editNickname').fadeIn(200);
+				$('#first_name').hide();
+				$('#first_name').attr("disabled", "");
+				$('#editFirstname').fadeIn(200);
 				$('#title').fadeIn(200);
-				$('#saveNickname').hide();
+				$('#saveFirstname').hide();
 			});
 		} else {
-			$('#nickname').hide();
-			$('#nickname').attr("disabled", "");
-			$('#editNickname').fadeIn(200);
+			$('#first_name').hide();
+			$('#first_name').attr("disabled", "");
+			$('#editFirstname').fadeIn(200);
 			$('#title').fadeIn(200);
-			$('#saveNickname').hide();
+			$('#saveFirstname').hide();
 		}
 		
 		return false;

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121108044026) do
+ActiveRecord::Schema.define(:version => 20121108034318) do
 
   create_table "admins", :force => true do |t|
     t.string   "first_name"
@@ -67,7 +67,7 @@ ActiveRecord::Schema.define(:version => 20121108044026) do
   end
 
   create_table "chat_users", :force => true do |t|
-    t.string   "nickname"
+    t.string   "first_name"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
@@ -79,10 +79,9 @@ ActiveRecord::Schema.define(:version => 20121108044026) do
     t.text     "chat"
     t.text     "screenshots"
     t.date     "date_of_chat"
+    t.string   "channel"
     t.datetime "created_at",   :null => false
     t.datetime "updated_at",   :null => false
-    t.string   "channel"
-    t.string   "owner"
   end
 
   create_table "customers", :force => true do |t|
@@ -107,12 +106,11 @@ ActiveRecord::Schema.define(:version => 20121108044026) do
   add_index "customers", ["reset_password_token"], :name => "index_customers_on_reset_password_token", :unique => true
 
   create_table "messages", :force => true do |t|
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
     t.integer  "chat_id"
     t.integer  "user_id"
-    t.string   "username"
-    t.string   "message"
+    t.text     "message"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "phrases", :force => true do |t|

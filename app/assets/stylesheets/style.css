@@ -59,12 +59,12 @@ a:hover, a:visited:hover { border-bottom: 1px solid #3f8eda; }
 		#wrapper .header a.right {
 			float: right;
 		}
-		#wrapper .header #nickname {
+		#wrapper .header #first_name {
 			display: none;
 			margin: -10px 0 0 -7px;
 			height: 10px;
 		}
-		#wrapper .header #saveNickname {
+		#wrapper .header #saveFirstname {
 			display: none;
 			padding-left: 5px;
 		}

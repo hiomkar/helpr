@@ -1,9 +1,7 @@
 Helpr::Application.routes.draw do
-  
+
 
   root :to => "home#home2"
-
-  match ':controller(/:action(/:id(.:format)))'
 
   devise_for :agents, :controllers => { :sessions => "agents/sessions" }
 
@@ -21,11 +19,15 @@ Helpr::Application.routes.draw do
 
   resources :phrases
 
+  match 'agents/join_chat' => 'agents#join_chat'
+
   resources :agents
 
   resources :admins
 
   resources :businesses
+
+  match ':controller(/:action(/:id(.:format)))'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

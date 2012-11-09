@@ -7,6 +7,7 @@ class CreateChats < ActiveRecord::Migration
       t.text :chat
       t.text :screenshots
       t.date :date_of_chat
+      t.string :channel
 
       t.timestamps
     end
