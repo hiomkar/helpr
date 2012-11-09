@@ -1,5 +1,6 @@
 Helpr::Application.routes.draw do
   
+
   root :to => "home#home2"
   
   devise_for :agents, :controllers => { :sessions => "agents/sessions" }

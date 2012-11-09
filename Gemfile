@@ -53,3 +53,7 @@ gem 'jquery-rails'
 # gem 'debugger'
 
 gem 'devise'
+
+gem 'pusher'
+
+gem 'rails_autolink'
