@@ -1,23 +1,15 @@
 Helpr::Application.routes.draw do
 
-
-  root :to => "home#home2"
-  
-  devise_for :agents, :controllers => { :sessions => "agents/sessions" }
-
-  devise_for :agents,  :path => "home", :path_names => { :sign_in => 'home' }
-
-  devise_for :admins, :controllers => { :sessions => "admins/sessions" }
-
-  devise_for :admins,  :path => "home", :path_names => { :sign_in => 'home' }
-
-  
-  devise_for :agents, :path => "", :path_names => { :sign_in => '/' }
-  
   devise_for :admins, :controllers => { :sessions => "admins/sessions", :registrations => "admins/registrations" }
   
-  devise_for :admins, :path => "", :path_names => { :sign_in => '/' }
+  devise_for :agents, :controllers => { :sessions => "agents/sessions" }
   
+  root :to => "home#home2"
+
+  devise_for :agents,  :path => "/", :path_names => { :sign_in => '/' }
+
+  devise_for :admins,  :path => "/", :path_names => { :sign_in => '/', :sign_up => 'admins/registrations' }
+
   devise_for :customers
 
   resources :customers
@@ -34,6 +26,7 @@ Helpr::Application.routes.draw do
 
   resources :businesses
 
+  
   match ':controller(/:action(/:id(.:format)))'
 
   # The priority is based upon order of creation:
