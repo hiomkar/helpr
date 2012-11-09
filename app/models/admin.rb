@@ -1,4 +1,7 @@
 class Admin < ActiveRecord::Base
+    # Relationships
+  belongs_to :business
+  
   # Include default devise modules. Others available are:
   # :token_authenticatable, :confirmable,
   # :lockable, :timeoutable and :omniauthable
@@ -7,15 +10,14 @@ class Admin < ActiveRecord::Base
 
   # Setup accessible (or protected) attributes for your model
   attr_accessible :email, :password, :password_confirmation, :remember_me
-  attr_accessible :first_name, :last_name, :phone
+  attr_accessible :first_name, :last_name, :phone, :business_attributes
   
+  accepts_nested_attributes_for :business
   
   
   # Callbacks
   before_save :reformat_phone
   
-  # Relationships
-  belongs_to :business
   
   # Validations
   validates_presence_of :first_name, :last_name

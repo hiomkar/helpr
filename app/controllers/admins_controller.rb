@@ -43,6 +43,7 @@ class AdminsController < ApplicationController
   def create
     @admin = Admin.new(params[:admin])
 
+
     respond_to do |format|
       if @admin.save
         format.html { redirect_to @admin, notice: 'Admin was successfully created.' }
