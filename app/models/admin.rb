@@ -19,7 +19,7 @@ class Admin < ActiveRecord::Base
   before_save :reformat_phone
   
   
-  # Validations
+  # Validations`
   validates_presence_of :first_name, :last_name
   validates_format_of :phone, :with => /^\(?\d{3}\)?[-. ]?\d{3}[-.]?\d{4}$/, :message => "should be 10 digits (area code needed) and delimited with dashes only"
   

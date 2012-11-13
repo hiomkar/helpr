@@ -1,5 +1,6 @@
 class Admins::RegistrationsController < Devise::RegistrationsController
    
+   
   def create
     # converts the time into a saveable format
     params[:admin][:business_attributes].parse_time_select! :start_hour 
@@ -12,5 +13,9 @@ class Admins::RegistrationsController < Devise::RegistrationsController
     admin = Admin.find_by_email(params[:admin][:email])
     business.admin_id = admin.id
     business.save!
+  end
+  
+  def after_sign_up_path_for(admins)
+    new_agent_registration_path
   end
 end

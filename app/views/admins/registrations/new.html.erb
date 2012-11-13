@@ -1,15 +1,27 @@
 <div class="container-fluid">
 	<div class="row-fluid">
-		<div class="span4">&nbsp;</div>
-		<div class="span4">
-			<h2>Sign up</h2>
-			<h2> Admin Sign Up </h2>
-			
+		<div class="span3">&nbsp;</div>
+		<div class="span6">
+			<h2>Sign up your business!</h2>
+		</div>
+		<div class="span3">&nbsp;</div>
+	</div>
+	<div class="row-fluid">
+		<div class="span3">&nbsp;</div>
+		<div class="span3">	
+			<h3>Business Details</h3>
 			<% resource.build_business %>
 			
+			
 			<%= simple_nested_form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
+			
+				<%= f.simple_fields_for :business, resource.business do |business| %>
+					<%= render "business_fields", :f => business %>
+				<% end %>
 				
-				
+		</div>
+		<div class="span3">
+				<h3>Administrator</h3>
 				<%= devise_error_messages! %>
 				
 				<%= f.input :first_name %>
@@ -22,15 +34,11 @@
 				<br>
 				
 			  	<%= f.submit "Sign up" %>
-			  	
-			  	
-			  	<%= f.simple_fields_for :business, resource.business do |business| %>
-					<%= render "business_fields", :f => business %>
-				<% end %>
+			  <br>
 			<% end %>
 			
 			<%= render "devise/shared/links" %>
-		</div>
-		<div class="span4">&nbsp;</div>
+			</div>
+		<div class="span3">&nbsp;</div>
 	</div>
 </div>
