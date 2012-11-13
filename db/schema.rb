@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121108034318) do
+ActiveRecord::Schema.define(:version => 20121113201033) do
 
   create_table "admins", :force => true do |t|
     t.string   "first_name"
@@ -29,6 +29,7 @@ ActiveRecord::Schema.define(:version => 20121108034318) do
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
+    t.integer  "business_id"
   end
 
   add_index "admins", ["email"], :name => "index_admins_on_email", :unique => true
@@ -56,7 +57,6 @@ ActiveRecord::Schema.define(:version => 20121108034318) do
   add_index "agents", ["reset_password_token"], :name => "index_agents_on_reset_password_token", :unique => true
 
   create_table "businesses", :force => true do |t|
-    t.integer  "admin_id"
     t.string   "biz_name"
     t.string   "biz_url"
     t.string   "existing_biz_url"

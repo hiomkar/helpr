@@ -4,10 +4,8 @@ class Agents::RegistrationsController < Devise::RegistrationsController
    
   # says there is no business for the current user when there should be
   def new
-    @admin = current_admin
-    @cur_admin = Admin.find(@admin.id)
+    @cur_admin = current_admin
     @business = @cur_admin.business
-    #@admin = @business.admin
     super
   end
 
