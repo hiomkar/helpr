@@ -12,7 +12,7 @@ class Admins::RegistrationsController < Devise::RegistrationsController
     business = Business.find_by_biz_url(params[:admin][:business_attributes][:biz_url])
     admin = Admin.find_by_email(params[:admin][:email])
     business.admin_id = admin.id
-    business.save!
+    business.save
   end
   
   def after_sign_up_path_for(admins)

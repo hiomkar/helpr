@@ -1,30 +1,57 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <b>First name:</b>
-  <%= @admin.first_name %>
-</p>
-
-<p>
-  <b>Last name:</b>
-  <%= @admin.last_name %>
-</p>
-
-<p>
-  <b>Email:</b>
-  <%= @admin.email %>
-</p>
-
-<p>
-  <b>Password:</b>
-  <%= @admin.password %>
-</p>
-
-<p>
-  <b>Phone:</b>
-  <%= @admin.phone %>
-</p>
-
-
-<%= link_to 'Edit', edit_admin_path(@admin) %> |
-<%= link_to 'Back', admins_path %>
+<div class="container-fluid">
+	<div class="row-fluid">
+		<div class="span2">&nbsp;</div>
+		<div class="span4">
+			<!-- admin info -->
+			<h2>Administrator</h2>
+			<b>First name:</b>
+			<%= @admin.first_name %>
+			<br>
+			<b>Last name:</b>
+  			<%= @admin.last_name %>
+			<br>
+			<b>Email:</b>
+  			<%= @admin.email %>
+			<br>
+			<b>Phone:</b>
+  			<%= @admin.phone %>
+		</div>
+		<div class="span4">
+			<!-- business info -->
+			<h2>Business</h2>
+		</div>
+		<div class="span2">&nbsp;</div>
+	</div>
+	<br>
+	<br>
+	<br>
+	<!-- Button links for admins -->
+	<div class="row-fluid">
+		<div class="span2">&nbsp;</div>
+		<div class="span3" style="height: 50px;">
+			<button class="btn btn-primary" style="width: 100%; height: 100%;">Edit Business/Admin</button>
+		</div>
+		<div class="span2">&nbsp;</div>
+		<div class="span3" style="height: 50px;">
+			<button class="btn btn-primary" style="width: 100%; height: 100%;">Add/Delete Agents</button>
+		</div>
+		<div class="span2">&nbsp;</div>
+	</div>
+	<br>
+	<div class="row-fluid">
+		<div class="span2">&nbsp;</div>
+		<div class="span3" style="height: 50px;">
+			<button class="btn btn-primary" style="width: 100%; height: 100%;">Add/Delete Phrases</button>
+		</div>
+		<div class="span2">&nbsp;</div>
+		<div class="span3" style="height: 50px;">
+			<button class="btn btn-primary" style="width: 100%; height: 100%;">Customer View</button>
+		</div>
+		<div class="span2">&nbsp;</div>
+	</div>
+	
+	<%= link_to 'Edit', edit_admin_path(@admin) %> |
+	<%= link_to 'Back', admins_path %>
+</div>

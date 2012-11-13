@@ -11,7 +11,7 @@ class Admins::SessionsController < Devise::SessionsController
     @devise_mapping ||= Devise.mappings[:admin]
   end
   
-  def after_sign_in_path_for(admins)
-    admins_path
+  def after_sign_in_path_for(admin)
+    admin
   end
 end

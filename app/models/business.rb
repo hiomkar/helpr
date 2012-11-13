@@ -16,6 +16,7 @@ class Business < ActiveRecord::Base
   # Validations
   validates_presence_of :biz_name, :biz_url, :existing_biz_url
   validates_time :end_hour, :after => :start_hour
+  validates_uniqueness_of :biz_url
    
     
   # Scopes

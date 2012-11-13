@@ -4,9 +4,16 @@ class Agents::RegistrationsController < Devise::RegistrationsController
    
   # says there is no business for the current user when there should be
   def new
-    @cur_admin = current_admin
+    @admin = current_admin
+    @cur_admin = Admin.find(@admin.id)
     @business = @cur_admin.business
+    #@admin = @business.admin
     super
   end
 
 end
+
+# Need to
+#--get association between businesses and agents working
+#--don't sign in after creating agent and leave admin signed in
+#--redirect to create agent page to create another agent
