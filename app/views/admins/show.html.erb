@@ -6,7 +6,11 @@
 			<div class="span4">
 				<h2>Welcome <u><%= @admin.first_name %> <%= @admin.last_name %></u></h2>
 				<p>Edit information about <b><%= @business.biz_name %></b> on this page.</p>
-        		<button class="btn btn-inverse">Edit Info</button>
+        		<%= link_to(edit_admin_registration_path) do %>
+					<button class="btn btn-inverse">
+						<span class="white-text">Edit Info</span>
+					</button>
+				<% end %> 
     		</div>
     		
     		<div class="span1">&nbsp;</div>
@@ -73,19 +77,19 @@
             	<p>Phrases are a fast and easy way for agents to respond to customers.</p> <br>
             	<div  style="text-align: center;">
             	<%= link_to(new_phrase_path) do %>
-					<button class="btn btn-success">
+					<button class="btn btn-info">
 						<i class="icon-plus icon-white"></i>
 						<span class="white-text">Add</span>
 					</button>
 				<% end %> &nbsp;
             	<%= link_to(phrases_path) do %>
-					<button class="btn btn-success">
+					<button class="btn btn-info">
 						<i class="icon-minus icon-white"></i>
 						<span class="white-text">Delete</span>
 					</button>
 				<% end %> &nbsp; <br> <br>
             	<%= link_to(phrases_path) do %>
-					<button class="btn btn-success" >
+					<button class="btn btn-info" >
 						<i class="icon-align-justify icon-white"></i>
 						<span class="white-text">View All</span>
 					</button>
