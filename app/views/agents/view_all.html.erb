@@ -1,31 +1,35 @@
 <div class="container-fluid">
 	<div class="row-fluid" style="text-align: center;">
-		<h3>~ Your Company has <%= @phrases.size %> Custom Phrases ~</h3>
+		<h3>~ Your Company has <%= @agents.size %> Agents ~</h3>
 	</div>
 	
 	<div class="row-fluid">
 		<div class="span1">&nbsp;</div>
 		
 		<div class="span10">
-			<% if @phrases.size > 0 %>
+			<% if @agents.size > 0 %>
 
-				<!-- table showing all phrases -->
+				<!-- table showing all agents -->
 				<table class="table table-striped">
 					<thead>
 						<tr>
-							<th><u>Phrase</u></th>
+							<th><u>Last Name</u></th>
+							<th><u>First Name</u></th>
+							<th><u>Email</u></th>
 							<th></th>
 						</tr>
 					</thead>
-					<!-- loop through phrases -->
-					<% @phrases.each do |phrase| %>
+					<!-- loop through agents -->
+					<% @agents.each do |agent| %>
 		     		<tr> 
 						<!-- name -->
-						<td><%= phrase.phrase %></td>
-
-						<!-- link to delete the phrase -->
+						<td><%= agent.last_name %></td>
+						<td><%= agent.first_name %></td>
+						<!-- email -->
+						<td><%= agent.email %></td>
+						<!-- link to delete the agent -->
 						<td>
-						<%= link_to(phrase, { :confirm => "Are you sure?", :method => :delete }) do %>
+						<%= link_to(agent, { :confirm => "Are you sure?", :method => :delete }) do %>
 							<button class="btn btn-danger">
 								<i class="icon-trash icon-white"></i>
 								<span class="white-text"> Delete</span>
@@ -50,9 +54,9 @@
 				</button>
 			<% end %>
 				&nbsp;
-			<%= link_to(new_phrase_path) do %>
+			<%= link_to(new_agent_registration_path) do %>
 				<button class="btn btn-primary">
-					<i class="icon-plus-sign icon-white"></i><span class="white-text"> New Phrase </span>
+					<i class="icon-plus-sign icon-white"></i><span class="white-text"> New Agent </span>
 				</button>
 			<% end %>
 		</div>

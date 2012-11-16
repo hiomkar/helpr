@@ -2,7 +2,8 @@ class PhrasesController < ApplicationController
   # GET /phrases
   # GET /phrases.json
   def index
-    @phrases = Phrase.all
+    @business = current_admin.business
+    @phrases = Phrase.for_business(@business.id)
 
     respond_to do |format|
       format.html # index.html.erb
@@ -25,6 +26,8 @@ class PhrasesController < ApplicationController
   # GET /phrases/new.json
   def new
     @phrase = Phrase.new
+    
+    @business = current_admin.business
 
     respond_to do |format|
       format.html # new.html.erb
