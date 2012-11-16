@@ -19,12 +19,19 @@ class CustomersController < ApplicationController
 
     #create chat object here
     @chat = Chat.new
-    customer = Customer.new
 
-    #TODO do input validation here
-    customer.email = params[:customer_email]
-    customer.first_name = params[:customer_name]
-    customer.save
+    input_customer_email = params[:customer_email]
+    existing_customer = Customer.find_by_email(input_customer_email)
+
+    if input_customer_email != nil && existing_customer != nil
+      customer = existing_customer
+    else
+      customer = Customer.new
+      #TODO do input validation here
+      customer.email = params[:customer_email]
+      customer.first_name = params[:customer_name]
+      customer.save
+    end
 
     @chat.customer = customer
     @chat.save
@@ -38,12 +45,12 @@ class CustomersController < ApplicationController
     business_url = params[:business_url]
     @business = Business.find_by_biz_url(business_url)
 
-    agent_id = AgentRouter.select_agent
+    agent_id = AgentRouter.select_agent(@business)
 
     #notify agents of incoming chat
     channel_name = "cc-new-chat-channel-"+agent_id.to_s
     event_name = "customer-call-event"
-    Pusher[channel_name].trigger(event_name, {:chat_id => @chat.id.to_s, :user_id => @chat.customer.first_name})
+    Pusher[channel_name].trigger(event_name, {:chat_id => @chat.id.to_s, :customer_name => @chat.customer.first_name, :customer_id => @chat.customer.id})
 
   end
 

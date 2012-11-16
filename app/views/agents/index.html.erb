@@ -8,8 +8,8 @@
     var channel1 = pusher1.subscribe("<%= @channel_name %>");
     //alert(pusher1);
     channel1.bind('customer-call-event', function(data) {
-        alert('You have a new incoming chat from: ' + data.user_id);
-        $('#chat_list li:last').after('<li class="active"><a href="/agents/join_chat?chat_id='+data.chat_id+'">Chat from: '+data.user_id+'</a></li>');
+        alert('You have a new incoming chat from: ' + data.customer_name);
+        $('#chat_list li:last').after('<li class="active"><a href="/agents/join_chat?chat_id='+data.chat_id+'&customer_id='+data.customer_id+'">Chat from: '+data.customer_name+'</a></li>');
     });
 
     pusher1.connection.bind('state_change', function(states) {
@@ -105,8 +105,16 @@
           </div>
           <div class="span4">
             <h2>History</h2>
-            <p>A paragraph of details about the heading and its related content so that
-              you can have an example of how this should work.</p>
+            <% if @chat_history_messages !=nil %>
+                <ul id="messages">
+                  <% @chat_history_messages.each do |messages|
+                    messages.each ||
+                      <li><%= message.message %></li>
+                  <% end %>
+                </ul>
+            <% else %>
+                <p> Chat history of customers </p>
+            <% end %>
             <a class="btn" href="#"><span class="btn-label">View Details</span></a>
           </div>
           <div class="span4">
