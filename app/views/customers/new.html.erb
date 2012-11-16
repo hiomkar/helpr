@@ -1,5 +1,69 @@
-<h1>New customer</h1>
 
-<%= render 'form' %>
+<div class="navbar navbar-fixed-top">
+  <div class="navbar-inner">
+    <div class="container">
+      <a class="brand" href="#">Helpr</a>
+      <div class="navbar-content">
+        <ul class="nav "></ul>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="span3">
+    <div class="well">
+      <h1>Welcome to <%= @business.biz_name %>!</h1>
+    </div>
+  </div>
 
-<%= link_to 'Back', customers_path %>
+  <a class="btn btn-large btn-primary btn-block visible-phone" href="#"><span class="btn-label">Sign Up Today!</span></a>
+  <div class="row">
+    <div class="span3"></div>
+    <div class="span6">
+      <div class="well">
+        <div class="well">
+          <h3>Hello!</h3>
+          <p>We just need a few details about you and then we are ready to go!</p>
+          <form action="/customers"
+                class="form-vertical">
+            <div class="control-group">
+              <label class="control-label" for="customer_name">Name</label>
+              <div class="controls">
+                <input type="text" name="customer_name" id="customer_name" class="input-large"
+                       maxlength="30">
+              </div>
+            </div>
+            <div class="control-group">
+              <label class="control-label" for="customer_email">Email</label>
+              <div class="controls">
+                <input type="email" name="customer_email" id="customer_email" class="input-large"
+                       maxlength="30">
+              </div>
+            </div>
+            <div class="control-group">
+              <label class="control-label" for="customer_phone">Telephone</label>
+              <div class="controls">
+                <input type="text" name="customer_phone" id="customer_phone" class="input-large">
+              </div>
+            </div>
+            <div class="control-group">
+              <label class="control-label" for="customer_keywords">Keywords in your query</label>
+              <div class="controls">
+                <input type="text" name="customer_keywords" id="customer_keywords" class="input-large">
+              </div>
+            </div>
+
+            <input type="hidden" value="<%= @business.biz_url %>" name="business_url">
+
+            <button class="btn btn-success" type="submit">
+              <span class="btn-label">Start Chat</span>
+            </button>
+          </form>
+
+        </div>
+      </div>
+    </div>
+    <div class="span3"></div>
+  </div>
+</div>
+<script src="https://app.divshot.com/js/bootstrap.min.js"></script>

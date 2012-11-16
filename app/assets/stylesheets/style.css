@@ -20,7 +20,7 @@ a:hover, a:visited:hover { border-bottom: 1px solid #3f8eda; }
 	box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
     -webkit-box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
 	-moz-box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
-	margin: 120px auto 25px auto;
+	margin: 10px auto 10px auto;
 }
 	#wrapper .inner {
 		padding: 20px;

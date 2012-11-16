@@ -5,60 +5,122 @@
 
 <script type="text/javascript">
     var pusher1 = new Pusher('1295f5b9b5137f04288e'); // Replace with your app key
-    var channel1 = pusher1.subscribe('cc-new-chat-channel');
+    var channel1 = pusher1.subscribe("<%= @channel_name %>");
     //alert(pusher1);
     channel1.bind('customer-call-event', function(data) {
         alert('You have a new incoming chat from: ' + data.user_id);
-        $('#chat_table tr:last').after('<tr><td><a href="/agents/join_chat?chat_id='+data.chat_id+'">Chat Id: '+data.chat_id+'</a></td></tr>');
+        $('#chat_list li:last').after('<li class="active"><a href="/agents/join_chat?chat_id='+data.chat_id+'">Chat from: '+data.user_id+'</a></li>');
     });
 
     pusher1.connection.bind('state_change', function(states) {
         // states = {previous: 'oldState', current: 'newState'}
-        $('div#status').text("System online status: " + states.current);
+        $('span#status').text(states.current);
     });
 </script>
 
-<div id="status" >
-  OFFLINE
+<div class="navbar">
+  <div class="navbar-inner">
+    <div class="container">
+      <a class="brand" href="#"><%= @agent.business.biz_name %></a>
+      <div class="navbar-content">
+        <ul class="nav">
+          <li>
+            <a href="#">Help</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
 </div>
+<div class="container-fluid">
+  <div class="row-fluid">
+    <div class="span3">
+      <div class="well">
+        <table> <tr><td>System status:</td>
+          <td><span class="label label-success" id="status"></span></td>
+        </tr>
+        </table>
+        <br>
+        <ul class="nav  nav-pills nav-stacked" id="chat_list">
+          <li>
+            <a href="#">Waiting for Chats</a>
+          </li>
+        </ul>
+
+        <br>
+        <div class="well">
+          <p>
+            <b>Tip:</b>You can add additional components to your layout easily.</p>
+        </div>
+
+      </div>
+    </div>
+    <div class="span9">
+
+      <div class="well">
+
+
+        <h3>Welcome <%= @agent.first_name %></h3>
+
+        <div class="well">
+
+          <!--pusher-->
+
+
+          <%  if @chat != nil %>
+
+              <script type="text/javascript">
+                  // Set the globals used by chat.js
+                  channel = "<%= @chat.channel %>";
+                  chat_id = "<%= @chat.id %>";
+                  user_id = "<%= @user.id %>";
+              </script>
+
+              <div id="wrapper">
+                <div class="header">
+                  <div id="title" class="member_list_title">Pusher Chat (<span id="room_count">0</span>)</div>
+                  <span id="loading"></span>
+                </div>
+                <ul id="messages">
+                  <% @messages.each do |message| %>
+                      <% user = ChatUser.find(message.user_id) %>
+                      <li<% if user.id == @user.id %> class="you"<% end %>><strong><%= user.first_name %></strong> said:<br><%= auto_link_urls(message.message, { :target => "_blank" }) %></li>
+                  <% end %>
+                </ul>
+                <div id="message-overlay"></div>
+                <textarea disabled="disabled" id="message" name="message">Type your message here and hit enter...</textarea>
+              </div>
+
+          <% end %>
+
+          <!--pusher-->
+
+        </div>
+        <div class="row-fluid">
+          <div class="span4">
+            <h2>Phrases</h2>
+            <p>A paragraph of details about the heading and its related content so that
+              you can have an example of how this should work.</p>
+            <a class="btn" href="#"><span class="btn-label">View Details</span></a>
+          </div>
+          <div class="span4">
+            <h2>History</h2>
+            <p>A paragraph of details about the heading and its related content so that
+              you can have an example of how this should work.</p>
+            <a class="btn" href="#"><span class="btn-label">View Details</span></a>
+          </div>
+          <div class="span4">
+            <h2>Screenshots</h2>
+            <p>A paragraph of details about the heading and its related content so that
+              you can have an example of how this should work.</p>
+            <a class="btn" href="#"><span class="btn-label">View Details</span></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="https://app.divshot.com/js/bootstrap.min.js"></script>
 
 <br/>
-
-<table id="chat_table" class="table table-bordered">
-  <tbody>
-  <tr></tr>
-  </tbody>
-</table>
-
-
-<%  if @chat != nil %>
-
-<script type="text/javascript">
-    // Set the globals used by chat.js
-    channel = "<%= @chat.channel %>";
-    chat_id = "<%= @chat.id %>";
-    user_id = "<%= @user.id %>";
-</script>
-
-
-
-<div id="wrapper">
-  <div class="header">
-    <div id="title" class="member_list_title">Pusher Chat (<span id="room_count">0</span>)</div>
-    <a href="#" id="editFirstname">Change Name</a>
-    <input type="text" value="<%= @user.first_name %>" id="first_name" />
-    <a href="#" id="saveFirstname">Save</a>
-    <a class="right tiptip" href="#" title="<b>How to Invite...</b><br />Simple share the URL of this page with anybody else to invite them to the chatter!">Invite</a>
-    <span id="loading"></span>
-  </div>
-  <ul id="messages">
-    <% @messages.each do |message| %>
-        <% user = ChatUser.find(message.user_id) %>
-        <li<% if user.id == @user.id %> class="you"<% end %>><strong><%= user.first_name %></strong> said:<br><%= auto_link_urls(message.message, { :target => "_blank" }) %></li>
-    <% end %>
-  </ul>
-  <div id="message-overlay"></div>
-  <textarea disabled="disabled" id="message" name="message">Type your message here and hit enter...</textarea>
-</div>
-
-<% end %>
+<br/>
