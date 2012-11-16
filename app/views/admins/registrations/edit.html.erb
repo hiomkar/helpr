@@ -1,25 +1,49 @@
-<h2>Edit <%= resource_name.to_s.humanize %></h2>
+<div class="container-fluid">
+	<div class="row-fluid">
+		<div class="span3">&nbsp;</div>
+		<div class="span6">
+			<h2>Update Business Info</h2>
+		</div>
+		<div class="span3">&nbsp;</div>
+	</div>
+	<div class="row-fluid">
+		<div class="span3">&nbsp;</div>
+		<div class="span3">	
+			<h3>Business Details</h3>
 
-<%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put }) do |f| %>
-  <%= devise_error_messages! %>
-
-  <div><%= f.label :email %><br />
-  <%= f.email_field :email %></div>
-
-  <div><%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
-  <%= f.password_field :password, :autocomplete => "off" %></div>
-
-  <div><%= f.label :password_confirmation %><br />
-  <%= f.password_field :password_confirmation %></div>
-
-  <div><%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
-  <%= f.password_field :current_password %></div>
-
-  <div><%= f.submit "Update" %></div>
-<% end %>
-
-<h3>Cancel my account</h3>
-
-<p>Unhappy? <%= link_to "Cancel my account", registration_path(resource_name), :data => { :confirm => "Are you sure?" }, :method => :delete %>.</p>
-
-<%= link_to "Back", :back %>
+			<%= simple_nested_form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
+			
+				<%= f.simple_fields_for :business, resource.business do |business| %>
+					<%= render "business_fields", :f => business %>
+				<% end %>
+				
+				<br>
+				<br>
+				<h3>Cancel my account</h3>
+				<p>Unhappy? <%= link_to "Cancel my account", registration_path(resource_name), :data => { :confirm => "Are you sure?" }, :method => :delete %>.</p>
+				
+		</div>
+		<div class="span3">
+				<h3>Administrator</h3>
+				<%= devise_error_messages! %>
+				
+				<%= f.input :first_name %>
+			  	<%= f.input :last_name %>
+			  	<%= f.input :phone %>
+			 	<%= f.input :email %>
+			  	<%= f.input :password %>
+			  	<p>Leave blank if you don't want to change it.</p>
+			  	<%= f.input :password_confirmation %>
+			  	<%= f.input :current_password %>
+			  	<p>We need your current password to confirm your changes.</p>
+				
+				<br>
+				
+			  	<div><%= f.submit "Update" %></div>
+			  <br>
+			<% end %>
+			
+			</div>
+		<div class="span3">&nbsp;</div>
+	</div>
+</div>

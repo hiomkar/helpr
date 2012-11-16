@@ -19,6 +19,8 @@ Helpr::Application.routes.draw do
   resources :phrases
 
   match 'agents/join_chat' => 'agents#join_chat'
+  
+  match 'agents/view_all' => 'agents#view_all'
 
   resources :agents
 

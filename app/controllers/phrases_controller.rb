@@ -1,8 +1,11 @@
 class PhrasesController < ApplicationController
+  before_filter :authenticate_admin!
+  
   # GET /phrases
   # GET /phrases.json
   def index
-    @phrases = Phrase.all
+    @business = current_admin.business
+    @phrases = Phrase.for_business(@business.id)
 
     respond_to do |format|
       format.html # index.html.erb
@@ -25,6 +28,8 @@ class PhrasesController < ApplicationController
   # GET /phrases/new.json
   def new
     @phrase = Phrase.new
+    
+    @business = current_admin.business
 
     respond_to do |format|
       format.html # new.html.erb
@@ -44,7 +49,7 @@ class PhrasesController < ApplicationController
 
     respond_to do |format|
       if @phrase.save
-        format.html { redirect_to @phrase, notice: 'Phrase was successfully created.' }
+        format.html { redirect_to new_phrase_path, notice: 'Phrase was successfully created.' }
         format.json { render json: @phrase, status: :created, location: @phrase }
       else
         format.html { render action: "new" }

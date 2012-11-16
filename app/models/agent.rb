@@ -9,4 +9,10 @@ class Agent < ActiveRecord::Base
   attr_accessible :email, :password, :password_confirmation, :remember_me
   attr_accessible :business_id, :first_name, :last_name
   belongs_to :business
+  
+  
+  # Scopes
+  scope :alphabetical, order('last_name, first_name')
+  scope :for_business, lambda {|business_id| where("business_id = ?", business_id) }
+  
 end
