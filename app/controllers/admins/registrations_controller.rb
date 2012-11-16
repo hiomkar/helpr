@@ -19,4 +19,8 @@ class Admins::RegistrationsController < Devise::RegistrationsController
   def after_sign_up_path_for(admins)
     new_agent_registration_path
   end
+  
+  def after_update_path_for(admin)
+    admin_path(admin)
+  end
 end

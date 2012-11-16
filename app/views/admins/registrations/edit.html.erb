@@ -17,9 +17,10 @@
 					<%= render "business_fields", :f => business %>
 				<% end %>
 				
+				<br>
+				<br>
 				<h3>Cancel my account</h3>
-
-<p>Unhappy? <%= link_to "Cancel my account", registration_path(resource_name), :data => { :confirm => "Are you sure?" }, :method => :delete %>.</p>
+				<p>Unhappy? <%= link_to "Cancel my account", registration_path(resource_name), :data => { :confirm => "Are you sure?" }, :method => :delete %>.</p>
 				
 		</div>
 		<div class="span3">
@@ -42,11 +43,7 @@
 			  <br>
 			<% end %>
 			
-			<%= render "devise/shared/links" %>
 			</div>
 		<div class="span3">&nbsp;</div>
 	</div>
 </div>
-
-
-<%= link_to "Back", :back %>

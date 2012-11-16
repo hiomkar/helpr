@@ -1,4 +1,5 @@
 class AdminsController < ApplicationController
+  before_filter :authenticate_admin!, :only => [:index, :edit, :show, :destroy]
   
   # GET /admins
   # GET /admins.json

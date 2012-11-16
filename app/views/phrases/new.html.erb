@@ -9,14 +9,13 @@
 			    <%= f.input :business_id, :as => :hidden, :input_html => { :value => @business.id } %> <br>
 			    <%= f.input :phrase, :label => false, :input_html => { :rows => 5, :cols => 5 } %>
 				<br>
-			    <%= f.submit %>
+			    <%= f.submit 'Save Phrase' %>
 			
 			<% end %>
 			
 			<%= link_to(admin_path(current_admin)) do %>
 				<button class="btn btn-primary">
-					<i class="icon-arrow-left icon-white"></i>
-					<span class="white-text">Back</span>
+					<span class="white-text">Complete Registration</span>
 				</button>
 			<% end %>
 		</div>
