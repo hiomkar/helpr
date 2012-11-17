@@ -18,11 +18,11 @@ class AgentsController < ApplicationController
     customer_id = params[:customer_id]
     customer = Customer.find(customer_id)
     chat_history = customer.chats
-    @chat_history_messages = Array.new
+    @chat_history_messages = Hash.new
     chat_history.each { |chat|
       messages = Message.all(:conditions => ["chat_id = ?", chat.id.to_s])
       if !messages.empty?
-        @chat_history_messages.append(messages)
+        @chat_history_messages[chat.created_at] = messages
       end
     }
     render "agents/index"

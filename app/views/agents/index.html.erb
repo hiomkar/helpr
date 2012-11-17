@@ -106,10 +106,14 @@
           <div class="span4">
             <h2>History</h2>
             <% if @chat_history_messages !=nil %>
-                <ul id="messages">
-                  <% @chat_history_messages.each do |messages|
-                    messages.each ||
-                      <li><%= message.message %></li>
+                <ul>
+                  <% @chat_history_messages.each do |chat, chat_messages| %>
+                             <br/>
+                      <strong>Chat: <%= chat %></strong>
+                      <% chat_messages.each do |msg| %>
+                          <li><%= msg.message %></li>
+
+                      <% end %>
                   <% end %>
                 </ul>
             <% else %>

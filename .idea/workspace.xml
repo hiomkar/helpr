@@ -2,13 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="46f45eb7-1cfa-4abd-9eee-5d9300891122" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/agents_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/agents_controller.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/customers_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/customers_controller.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/chat.rb" afterPath="$PROJECT_DIR$/app/models/chat.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/message.rb" afterPath="$PROJECT_DIR$/app/models/message.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/agents/index.html.erb" afterPath="$PROJECT_DIR$/app/views/agents/index.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/customers/index.html.erb" afterPath="$PROJECT_DIR$/app/views/customers/index.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/router/agent_router.rb" afterPath="$PROJECT_DIR$/lib/router/agent_router.rb" />
     </list>
     <ignored path="helpr.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -31,37 +27,19 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="customers_controller.rb" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="customers_controller.rb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/controllers/customers_controller.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="40" column="74" selection-start="972" selection-end="1042" vertical-scroll-proportion="0.0">
+            <state line="40" column="74" selection-start="972" selection-end="1042" vertical-scroll-proportion="1.9686801">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="chat.rb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/models/chat.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="6" column="20" selection-start="202" selection-end="202" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="message.rb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/models/message.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="1" column="18" selection-start="53" selection-end="53" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.html.erb" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="index.html.erb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/agents/index.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="111" column="30" selection-start="3709" selection-end="3709" vertical-scroll-proportion="0.3846154">
+            <state line="111" column="56" selection-start="3733" selection-end="3733" vertical-scroll-proportion="2.483871">
               <folding />
             </state>
           </provider>
@@ -70,65 +48,8 @@
       <file leaf-file-name="agents_controller.rb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/controllers/agents_controller.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="26" column="61" selection-start="878" selection-end="878" vertical-scroll-proportion="0.0">
+            <state line="24" column="46" selection-start="860" selection-end="860" vertical-scroll-proportion="0.0">
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="RailsDependency/#helpr" pinned="false" current="false" current-in-tab="false">
-        <entry file="uml://RailsDependency/#helpr">
-          <provider selected="true" editor-type-id="UmlEditorProvider">
-            <state>
-              <ID>RailsDependency</ID>
-              <OriginalElement>#helpr</OriginalElement>
-              <nodes>
-                <node x="273.5" y="659.0">Customer</node>
-                <node x="732.0" y="0.0">ChatUser</node>
-                <node x="0.0" y="534.0">Business</node>
-                <node x="913.0" y="0.0">Message</node>
-                <node x="539.0" y="606.5">Chat</node>
-                <node x="239.0" y="0.0">Agent</node>
-                <node x="279.0" y="848.0">Phrase</node>
-                <node x="239.0" y="329.0">Admin</node>
-              </nodes>
-              <notes />
-              <edges>
-                <edge source="Business" target="Chat">
-                  <point x="79.5" y="-0.0" />
-                  <point x="-74.0" y="-42.25" />
-                </edge>
-                <edge source="Business" target="Phrase">
-                  <point x="79.5" y="91.60000000000002" />
-                  <point x="239.0" y="882.5" />
-                  <point x="-70.0" y="-0.0" />
-                </edge>
-                <edge source="Business" target="Agent">
-                  <point x="79.5" y="-91.60000000000002" />
-                  <point x="-110.0" y="-0.0" />
-                </edge>
-                <edge source="Customer" target="Chat">
-                  <point x="75.5" y="-0.0" />
-                  <point x="-74.0" y="42.25" />
-                </edge>
-                <edge source="Business" target="Admin">
-                  <point x="79.5" y="-45.799999999999955" />
-                  <point x="-110.0" y="-0.0" />
-                </edge>
-                <edge source="Business" target="Customer">
-                  <point x="79.5" y="45.799999999999955" />
-                  <point x="239.0" y="733.5" />
-                  <point x="-75.5" y="-0.0" />
-                </edge>
-              </edges>
-              <settings layout="Hierarchic Group" zoom="0.7909284951974385" x="297.44083119686957" y="127.44083119686957" />
-              <SelectedNodes>
-                <node>Message</node>
-              </SelectedNodes>
-              <Categories>
-                <Category>Association fields</Category>
-                <Category>Migration fields</Category>
-              </Categories>
             </state>
           </provider>
         </entry>
@@ -715,7 +636,7 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.16786227" sideWeight="0.67548746" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.14347202" sideWeight="0.67548746" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.14275466" sideWeight="0.67548746" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32451254" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="true" content_ui="tabs" />
@@ -781,21 +702,9 @@
     <option name="FILE_HISTORY_SPLITTER_PROPORTION" value="0.6" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="ruby-line">
-          <url>file://$PROJECT_DIR$/app/views/agents/index.html.erb</url>
-          <line>111</line>
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="dbDummy://dbElement:/ccbcb4c7/b8cfcee4-d309-4b82-819d-682ba85ebc7d/..businesses">
-      <provider selected="true" editor-type-id="com.intellij.persistence.database.editor.DatabaseTableFileEditorProvider">
-        <state />
-      </provider>
-    </entry>
     <entry file="dbDummy://dbElement:/ccbcb4c7/b8cfcee4-d309-4b82-819d-682ba85ebc7d/..admins">
       <provider selected="true" editor-type-id="com.intellij.persistence.database.editor.DatabaseTableFileEditorProvider">
         <state />
@@ -908,37 +817,42 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/chat.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="20" selection-start="202" selection-end="202" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+    <entry file="dbDummy://dbElement:/ccbcb4c7/b8cfcee4-d309-4b82-819d-682ba85ebc7d/..chats">
+      <provider selected="true" editor-type-id="com.intellij.persistence.database.editor.DatabaseTableFileEditorProvider">
+        <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/message.rb">
+    <entry file="file://$PROJECT_DIR$/app/views/agents/index.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="18" selection-start="53" selection-end="53" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/customers_controller.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="40" column="74" selection-start="972" selection-end="1042" vertical-scroll-proportion="0.0">
+        <state line="111" column="56" selection-start="3733" selection-end="3733" vertical-scroll-proportion="2.483871">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/agents_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="26" column="61" selection-start="878" selection-end="878" vertical-scroll-proportion="0.0">
+        <state line="24" column="46" selection-start="860" selection-end="860" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/agents/index.html.erb">
+    <entry file="file://$PROJECT_DIR$/app/models/message.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="111" column="30" selection-start="3709" selection-end="3709" vertical-scroll-proportion="0.3846154">
+        <state line="1" column="18" selection-start="53" selection-end="53" vertical-scroll-proportion="0.031746034">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/chat.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="6" column="20" selection-start="202" selection-end="202" vertical-scroll-proportion="0.1904762">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/customers_controller.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="40" column="74" selection-start="972" selection-end="1042" vertical-scroll-proportion="1.9686801">
           <folding />
         </state>
       </provider>
