@@ -43,9 +43,20 @@
 <%= yield %>
 
 <div id="footer">
+  <br/>
+  <p>&copy; 2012 <a href="http://livehelpr.herokuapp.com/" target="_blank">Helpr</a> by <b>Mike Ferraco</b> and <b>Omkar Ambardekar</b>, Carnegie Mellon University</p>
   <p>Pusher Chat is proudly powered by <a href="http://pusherapp.com/" target="_blank">Pusher App</a>. Created by <a href="http://tarnfeld.com/" target="_blank">Tom Arnfeld</a>.</p>
 </div>
 
+
+<script type="text/javascript">
+    var uvOptions = {};
+    (function() {
+        var uv = document.createElement('script'); uv.type = 'text/javascript'; uv.async = true;
+        uv.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'widget.uservoice.com/fUiRSJkFCIMvCrBWNJLw.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(uv, s);
+    })();
+</script>
 
 </body>
 </html>
