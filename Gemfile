@@ -57,3 +57,5 @@ gem 'devise'
 gem 'pusher'
 
 gem 'rails_autolink'
+
+gem 'paperclip-dropbox'

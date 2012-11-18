@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121113201033) do
+ActiveRecord::Schema.define(:version => 20121118031852) do
 
   create_table "admins", :force => true do |t|
     t.string   "first_name"
@@ -97,8 +97,12 @@ ActiveRecord::Schema.define(:version => 20121113201033) do
     t.integer  "chat_id"
     t.integer  "user_id"
     t.text     "message"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",               :null => false
+    t.datetime "updated_at",               :null => false
+    t.string   "shared_file_file_name"
+    t.string   "shared_file_content_type"
+    t.integer  "shared_file_file_size"
+    t.datetime "shared_file_updated_at"
   end
 
   create_table "phrases", :force => true do |t|

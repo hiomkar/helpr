@@ -2,11 +2,13 @@
 
 <%= javascript_include_tag "http://js.pusherapp.com/1.9/pusher.min.js" %>
 
+
 <script type="text/javascript">
     // Set the globals used by chat.js
     channel = "<%= @chat.channel %>";
     chat_id = "<%= @chat.id %>";
     user_id = "<%= @user.id %>";
+
 </script>
 
 
@@ -39,7 +41,23 @@
     </div>
     <!--pusher chat stub-->
 
+    <!--dropbox-->
 
+    <%= form_for Message.new, :remote => true, :url => { :controller => "api", :action => "upload_file" }, :html => { :id => "fileUploadForm", :target => "results" }  do |f| %>
+
+        <div class="controls">
+          <%= f.label :shared_file %>
+          <%= f.submit "Upload File", :class => "btn btn-primary" %>
+          <%= f.file_field :shared_file %>
+
+        </div>
+        <input type="hidden" id="chat_id" name="chat_id" value="<%= @chat.id %>" />
+
+    <% end %>
+
+    <div id="upload_status"></div>
+
+    <iframe src="/assets/uploader.js" width="0" id="results" name="results" height="0" border="0" frameborder="0" scrolling="auto" align="center" hspace="0" vspace=""></iframe>
 
   </div>
 

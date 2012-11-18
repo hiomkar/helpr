@@ -184,5 +184,12 @@ $(document).ready(function()
 	}).blur(function() {
 		if($(this).val() == "") { $(this).val(text); }
 	});
-	
+
+    //file uploader
+    presenceChannel.bind('uploaded_file', function(result) {
+        alert("Link to shared file: "+result.shared_file);
+        $('#messages').append('<li class="note" >File Uploaded: <a href=\''+result.shared_file+'\'>'+result.shared_file+'</a></li>');
+    });
+
+
 });

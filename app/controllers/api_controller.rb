@@ -64,4 +64,26 @@ class ApiController < ApplicationController
     end
   end
 
+  def upload_file
+    chat = Chat.find(params[:chat_id])
+    message = Message.create(params[:message])
+    message.chat_id = chat.id
+
+    user = ChatUser.user(session)
+    message.user_id = user.id
+    download_url = message.shared_file.url(:download => true)
+    message.message = "<a href=\""+download_url+"\">"+download_url+"</a>"
+
+    payload = message.attributes
+    payload[:user] = user.attributes
+    payload[:shared_file] = message.shared_file.url(:download => true)
+
+    if message.save
+      Pusher["presence-" + chat.channel].trigger('send_message', payload)
+
+      render :text => "file uploaded"
+    else
+      render :text => "upload failed"
+    end
+  end
 end
