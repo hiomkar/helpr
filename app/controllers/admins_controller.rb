@@ -20,12 +20,18 @@ class AdminsController < ApplicationController
     @admin = Admin.find(params[:id])
     @business = @admin.business
 
-    messages_array = Message.all(:conditions => ["created_at like ?", Date.today.to_s+"%"])
+    messages_array = Message.all
     #messages_array = Message.all(:conditions => ["created_at like ?", "2012-11-16%"])
 
     messages_text_block = String.new
 
-    messages_array.each {|msg| messages_text_block += " "+msg.message }
+    messages_array.each { |msg|
+      if msg.message
+        messages_text_block += " "+msg.message
+      end
+    }
+
+    messages_text_block.gsub!(/(?:f|ht)tps?:\/[^\s]+/, '')
 
     post_args = {
         'height' => "500",
@@ -39,7 +45,6 @@ class AdminsController < ApplicationController
     @data = client.makeWordCloud(post_args['height'], post_args['textblock'], post_args['width'])
 
     #----------------
-
 
     respond_to do |format|
       format.html # show.html.erb
