@@ -24,8 +24,8 @@ class AdminsController < ApplicationController
 
     #messages_array = Message.find_by_sql "select * from messages INNER JOIN chats ON messages.chat_id=chats.id "
 
-    #messages_array = Message.find_by_sql "select * from messages INNER JOIN chats ON messages.chat_id=chats.id WHERE chats.business_id = "+@business.id.to_s+""
-    messages_array = Message.joins(:chat).where('chats.business_id', @business.id).all
+    messages_array = Message.find_by_sql "select * from messages INNER JOIN chats ON messages.chat_id=chats.id WHERE chats.business_id = "+@business.id.to_s+""
+    #messages_array = Message.joins(:chat).where('chats.business_id', @business.id).all
     #messages_array = Message.all(:conditions => ["created_at like ?", "2012-11-16%"])
 
     messages_text_block = String.new
