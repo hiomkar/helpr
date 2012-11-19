@@ -1,91 +1,104 @@
 <div class="container">
-	
-	<div class="well">
-		<div class="row">
-			
-			<div class="span4">
-				<h3>Welcome <u><%= @admin.first_name %> <%= @admin.last_name %></u></h3>
-				<p>Edit information about <b><%= @business.biz_name %></b> on this page.</p>
-        		<%= link_to(edit_admin_registration_path) do %>
-					<button class="btn btn-inverse">
-						<span class="white-text">Edit Info</span>
-					</button>
-				<% end %> 
-    		</div>
-    		
-    		<div class="span1">&nbsp;</div>
-        	
-        	<div class="span3">
-        		<br>
-        		<h4>Admin Info</h4>
-        		<p><b>Email:</b> <%= @admin.email %></p>
-        		<p><b>Phone:</b> <%= number_to_phone @admin.phone %></p>
-        	</div>
-        	<div class="span3">
-        		<br>
-        		<h4>Business Info</h4>
-        		<p><b>Name:</b> <%= @business.biz_name %></p>
-        		<p><b>URL:</b> <%= @business.biz_url %></p>
-        		<p><b>Existing URL:</b> <%= @business.existing_biz_url %></p>
-        		<p><b>Hours:</b> <%= @business.start_hour.strftime("%I:%M %p")%> - <%= @business.end_hour.strftime("%I:%M %p") %></p>
-        	</div>
-        	
-        </div>
+
+  <div class="well">
+    <div class="row">
+
+      <div class="span4">
+        <h3>Welcome <u><%= @admin.first_name %> <%= @admin.last_name %></u></h3>
+        <p>Edit information about <b><%= @business.biz_name %></b> on this page.</p>
+        <%= link_to(edit_admin_registration_path) do %>
+            <button class="btn btn-inverse">
+              <span class="white-text">Edit Info</span>
+            </button>
+        <% end %>
+      </div>
+
+      <div class="span1">&nbsp;</div>
+
+      <div class="span3">
+        <br>
+        <h4>Admin Info</h4>
+        <p><b>Email:</b> <%= @admin.email %></p>
+        <p><b>Phone:</b> <%= number_to_phone @admin.phone %></p>
+      </div>
+      <div class="span3">
+        <br>
+        <h4>Business Info</h4>
+        <p><b>Name:</b> <%= @business.biz_name %></p>
+        <p><b>URL:</b> <%= @business.biz_url %></p>
+        <p><b>Existing URL:</b> <%= @business.existing_biz_url %></p>
+        <p><b>Hours:</b> <%= @business.start_hour.strftime("%I:%M %p")%> - <%= @business.end_hour.strftime("%I:%M %p") %></p>
+      </div>
+
     </div>
-    
-    <div class="row main-features">
-    	<div class="span4">
-        	<div class="well" style="height:200px;">
-            	<h3>Customer View</h3>
-            	<p>Click here to see what the customer sees when chatting with your agents.</p> <br>
-            	<div  style="text-align: center;">
-            		<button class="btn btn-primary">Customer View</button>
-            	</div>
-          	</div>
+  </div>
+
+  <div class="row main-features">
+    <div class="span4">
+      <div class="well" style="height:200px;">
+        <h3>Customer View</h3>
+        <p>Click here to see what the customer sees when chatting with your agents.</p> <br>
+        <div  style="text-align: center;">
+          <button class="btn btn-primary">Customer View</button>
         </div>
-        
-        <div class="span4">
-        	<div class="well" style="height:200px;">
-            	<h3>Organize Agents</h3>
-            	<p>Here you can manage the agents who chat with customers for your business.</p> <br>
-            	<div  style="text-align: center;">
-            		<%= link_to(new_agent_registration_path) do %>
-						<button class="btn btn-success">
-							<i class="icon-plus icon-white"></i>
-							<span class="white-text">Add</span>
-						</button>
-					<% end %> &nbsp;
-            		<%= link_to(agents_view_all_path) do %>
-						<button class="btn btn-success">
-							<i class="icon-align-justify icon-white"></i>
-							<span class="white-text">View All</span>
-						</button>
-					<% end %>
-				</div>
-          	</div>
+      </div>
+    </div>
+
+    <div class="span4">
+      <div class="well" style="height:200px;">
+        <h3>Organize Agents</h3>
+        <p>Here you can manage the agents who chat with customers for your business.</p> <br>
+        <div  style="text-align: center;">
+          <%= link_to(new_agent_registration_path) do %>
+              <button class="btn btn-success">
+                <i class="icon-plus icon-white"></i>
+                <span class="white-text">Add</span>
+              </button>
+          <% end %> &nbsp;
+          <%= link_to(agents_view_all_path) do %>
+              <button class="btn btn-success">
+                <i class="icon-align-justify icon-white"></i>
+                <span class="white-text">View All</span>
+              </button>
+          <% end %>
         </div>
-        
-        <div class="span4">
-        	<div class="well" style="height:200px;">
-            	<h3>Manage Phrases</h3>
-            	<p>Phrases are a fast and easy way for agents to respond to customers.</p> <br>
-            	<div  style="text-align: center;">
-            		<%= link_to(new_phrase_path) do %>
-						<button class="btn btn-info">
-							<i class="icon-plus icon-white"></i>
-							<span class="white-text">Add</span>
-						</button>
-					<% end %> &nbsp;
-            		<%= link_to(phrases_path) do %>
-						<button class="btn btn-info" >
-							<i class="icon-align-justify icon-white"></i>
-							<span class="white-text">View All</span>
-						</button>
-					<% end %>
-				</div>
-          	</div>
-    	</div>
-	</div>
-	
+      </div>
+    </div>
+
+    <div class="span4">
+      <div class="well" style="height:200px;">
+        <h3>Manage Phrases</h3>
+        <p>Phrases are a fast and easy way for agents to respond to customers.</p> <br>
+        <div  style="text-align: center;">
+          <%= link_to(new_phrase_path) do %>
+              <button class="btn btn-info">
+                <i class="icon-plus icon-white"></i>
+                <span class="white-text">Add</span>
+              </button>
+          <% end %> &nbsp;
+          <%= link_to(phrases_path) do %>
+              <button class="btn btn-info" >
+                <i class="icon-align-justify icon-white"></i>
+                <span class="white-text">View All</span>
+              </button>
+          <% end %>
+        </div>
+      </div>
+    </div>
+
+    <div class="span12">
+
+      <div style="text-align: center;">
+        <h3>Word Cloud</h3>
+        <p><b>What are customers chatting about?</b></p> <br>
+        <img src="<%= @data.body['url'] %>"
+             height="<%= @data.body['height'] %>"
+             width="<%= @data.body['width'] %>" >
+      </div>
+
+    </div>
+
+  </div>
+
 </div>
-    <script src="https://app.divshot.com/js/bootstrap.min.js"></script>
+<script src="https://app.divshot.com/js/bootstrap.min.js"></script>

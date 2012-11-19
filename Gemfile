@@ -59,3 +59,5 @@ gem 'pusher'
 gem 'rails_autolink'
 
 gem 'paperclip-dropbox'
+
+gem 'mashape'

@@ -1,3 +1,5 @@
+require 'apis/WordCloudMaker'
+
 class AdminsController < ApplicationController
   before_filter :authenticate_admin!, :only => [:index, :edit, :show, :destroy]
   
@@ -17,6 +19,27 @@ class AdminsController < ApplicationController
   def show
     @admin = Admin.find(params[:id])
     @business = @admin.business
+
+    messages_array = Message.all(:conditions => ["created_at like ?", Date.today.to_s+"%"])
+    #messages_array = Message.all(:conditions => ["created_at like ?", "2012-11-16%"])
+
+    messages_text_block = String.new
+
+    messages_array.each {|msg| messages_text_block += " "+msg.message }
+
+    post_args = {
+        'height' => "500",
+        'textblock' => messages_text_block,
+        'width' => "500",
+        'config' => "n/a"
+    }
+
+    client = WordCloudMaker.new("xdychn3yvjk2ywk9ux8ks2x3xsv3fw", "itof6mgqqqvietyy5apdva4ugdsxdf")
+
+    @data = client.makeWordCloud(post_args['height'], post_args['textblock'], post_args['width'])
+
+    #----------------
+
 
     respond_to do |format|
       format.html # show.html.erb
