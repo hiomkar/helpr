@@ -20,7 +20,12 @@ class AdminsController < ApplicationController
     @admin = Admin.find(params[:id])
     @business = @admin.business
 
-    messages_array = Message.all
+    #WHERE chats.business_id = "+@business.id.to_s+"
+
+    #messages_array = Message.find_by_sql "select * from messages INNER JOIN chats ON messages.chat_id=chats.id "
+
+    #messages_array = Message.find_by_sql "select * from messages INNER JOIN chats ON messages.chat_id=chats.id WHERE chats.business_id = "+@business.id.to_s+""
+    messages_array = Message.joins(:chat).where('chats.business_id', @business.id).all
     #messages_array = Message.all(:conditions => ["created_at like ?", "2012-11-16%"])
 
     messages_text_block = String.new
@@ -40,7 +45,7 @@ class AdminsController < ApplicationController
         'config' => "n/a"
     }
 
-    client = WordCloudMaker.new("xdychn3yvjk2ywk9ux8ks2x3xsv3fw", "itof6mgqqqvietyy5apdva4ugdsxdf")
+    client = WordCloudMaker.new
 
     @data = client.makeWordCloud(post_args['height'], post_args['textblock'], post_args['width'])
 

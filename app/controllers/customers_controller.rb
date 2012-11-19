@@ -44,6 +44,8 @@ class CustomersController < ApplicationController
 
     business_url = params[:business_url]
     @business = Business.find_by_biz_url(business_url)
+    @chat.business = @business
+    @chat.save
 
     agent_id = AgentRouter.select_agent(@business)
 
