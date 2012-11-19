@@ -74,7 +74,7 @@ $(document).ready(function()
 			if(!hasFocus) {
 
 				// TODO: Update the page title
-				document.title = "New Message! - Pusher Chat";
+				document.title = "New Message! - Helpr";
 
 				// Programatically create an audio element and pop the user
 				if(browser_audio_type != "") {

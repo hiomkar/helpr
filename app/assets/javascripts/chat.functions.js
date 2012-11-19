@@ -6,7 +6,7 @@ var people = [];
 
 // Attach some functions to track when the window gains and looses focus
 window.onblur = function () {hasFocus = false; }
-window.onfocus = function () {hasFocus = true; document.title = "Pusher Chat"; }
+window.onfocus = function () {hasFocus = true; document.title = "Helpr"; }
 
 // Post to the server about the current status of typing
 function typing_status(status) { 
