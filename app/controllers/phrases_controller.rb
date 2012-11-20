@@ -28,7 +28,7 @@ class PhrasesController < ApplicationController
   # GET /phrases/new.json
   def new
     @phrase = Phrase.new
-    
+    @cur_admin = current_admin
     @business = current_admin.business
 
     respond_to do |format|

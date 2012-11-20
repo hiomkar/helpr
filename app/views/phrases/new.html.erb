@@ -13,10 +13,17 @@
 			
 			<% end %>
 			
-			<%= link_to(admin_path(current_admin)) do %>
-				<button class="btn btn-primary">
-					<span class="white-text">Complete Registration</span>
-				</button>
+			<% if url_for(:back).include?('admins/sign_up') %>
+				<%= link_to(admin_path(current_admin)) do %>
+					<button class="btn btn-primary">
+						<span class="white-text">Complete Registration</span>
+					</button>
+				<% end %>
+				<br><br><br>
+				<p>You can always add phrases later...</p>
+				<p>Click the 'Complete Registration' button to head to your home page.</p>
+			<% else %>
+				<%= link_to 'Done', admin_path(@cur_admin)%>
 			<% end %>
 		</div>
 		<div class="span4">&nbsp;</div>

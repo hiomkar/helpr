@@ -1,10 +1,13 @@
 class AgentsController < ApplicationController
 
-  before_filter :authenticate_agent!
+  before_filter :authenticate_agent!, :only => [:index, :join_chat, :edit, :show, :destroy]
 
   def index
     @channel_name = "cc-new-chat-channel-"+current_agent.id.to_s
     @agent = current_agent
+    @phrases = Phrase.for_business(@agent.business.id)
+    
+    @show_waiting = true
   end
 
   def join_chat
@@ -13,6 +16,12 @@ class AgentsController < ApplicationController
     @chat = Chat.find(params[:chat_id])
     @user = ChatUser.user(session, current_agent.first_name)
     @messages = Message.all(:conditions => ["chat_id = ?", @chat.id.to_s])
+    @phrases = Phrase.for_business(@agent.business.id)
+    
+    # get all the messages that contain screenshots from this customer's past messages
+    @messages_with_screenshots = @messages.map{|m| if !m.shared_file_file_name.nil? then m end}
+    
+    @show_waiting = false
 
     #retrieve any past chats for this customer
     customer_id = params[:customer_id]

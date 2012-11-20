@@ -16,8 +16,13 @@
 				<br>
 				
 			  	<%= f.submit "Sign Up Agent" %> <br><br>
-			  	<h4>Done Adding Agents? Next step... <%= link_to "Add Phrases", new_phrase_path %></h4>
-			  	
+			  	<% if url_for(:back).include?('admins/sign_up') %>
+			  		<h4>Done adding agents?<br> Next step... <%= link_to "Add Phrases", new_phrase_path %></h4>
+			  		<p>You can always add agents later...</p> 
+			  		<p>Head to the <%= @business.biz_name %> <%= link_to 'home', admin_path(@cur_admin) %> page to view your dashboard.</p>
+			  	<% else %>
+			  		<%= link_to 'Done', admin_path(@cur_admin)%>
+			  	<% end %>
 			<% end %>
 			
 		</div>

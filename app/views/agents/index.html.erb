@@ -21,7 +21,7 @@
 <div class="navbar">
   <div class="navbar-inner">
     <div class="container">
-      <a class="brand" href="#"><%= @agent.business.biz_name %></a>
+      <span class="brand" ><%= @agent.business.biz_name %></span>
       <div class="navbar-content">
         <ul class="nav">
           <li>
@@ -43,16 +43,11 @@
         <br>
         <ul class="nav  nav-pills nav-stacked" id="chat_list">
           <li>
-            <a href="#">Waiting for Chats</a>
+          	<% if @show_waiting == true %>
+            	<h4 id="waiting" style="color: blue;">Waiting for Chats</h4>
+            <% end %>
           </li>
         </ul>
-
-        <br>
-        <div class="well">
-          <p>
-            <b>Tip:</b>You can add additional components to your layout easily.</p>
-        </div>
-
       </div>
     </div>
     <div class="span9">
@@ -99,9 +94,11 @@
         <div class="row-fluid">
           <div class="span4">
             <h2>Phrases</h2>
-            <p>A paragraph of details about the heading and its related content so that
-              you can have an example of how this should work.</p>
-            <a class="btn" href="#"><span class="btn-label">View Details</span></a>
+            <ul>
+            	<% @phrases.each do |phrase| %>
+            		<li><%= phrase.phrase %></li>
+            	<% end %>
+            </ul>
           </div>
           <div class="span4">
             <h2>History</h2>
@@ -123,9 +120,9 @@
           </div>
           <div class="span4">
             <h2>Screenshots</h2>
-            <p>A paragraph of details about the heading and its related content so that
-              you can have an example of how this should work.</p>
-            <a class="btn" href="#"><span class="btn-label">View Details</span></a>
+            <ul>
+            	
+            </ul>
           </div>
         </div>
       </div>

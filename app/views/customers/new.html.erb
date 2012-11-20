@@ -24,42 +24,22 @@
         <div class="well">
           <h3>Hello!</h3>
           <p>We just need a few details about you and then we are ready to go!</p>
-          <form action="/customers"
-                class="form-vertical">
-            <div class="control-group">
-              <label class="control-label" for="customer_name">Name</label>
-              <div class="controls">
-                <input type="text" name="customer_name" id="customer_name" class="input-large"
-                       maxlength="30">
-              </div>
-            </div>
-            <div class="control-group">
-              <label class="control-label" for="customer_email">Email</label>
-              <div class="controls">
-                <input type="email" name="customer_email" id="customer_email" class="input-large"
-                       maxlength="30">
-              </div>
-            </div>
-            <div class="control-group">
-              <label class="control-label" for="customer_phone">Telephone</label>
-              <div class="controls">
-                <input type="text" name="customer_phone" id="customer_phone" class="input-large">
-              </div>
-            </div>
-            <div class="control-group">
-              <label class="control-label" for="customer_keywords">Keywords in your query</label>
-              <div class="controls">
-                <input type="text" name="customer_keywords" id="customer_keywords" class="input-large">
-              </div>
-            </div>
-
-            <input type="hidden" value="<%= @business.biz_url %>" name="business_url">
-
-            <button class="btn btn-success" type="submit">
-              <span class="btn-label">Start Chat</span>
-            </button>
-          </form>
-
+          <%= simple_nested_form_for @customer, do |f| %>
+			
+			<%= f.input :first_name, :required => true %>
+			<%= f.input :last_name, :required => true %>
+			<%= f.input :email, :required => true %>
+			<%= f.input :phone, :required => true %>
+					
+			<%= f.simple_fields_for :chat, do |chat| %>
+				<%= chat.input :business_id, :as => :hidden, :input_html => { :value => @business.id }%>
+				<%= chat.input :keywords %>
+			<% end %>
+				
+				<br>
+				
+			<%= f.submit "Chat!" %> <br><br>
+			<% end %>
         </div>
       </div>
     </div>

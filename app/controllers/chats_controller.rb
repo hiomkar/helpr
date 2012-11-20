@@ -24,12 +24,7 @@ class ChatsController < ApplicationController
   # GET /chats/new
   # GET /chats/new.json
   def new
-    @chat = Chat.new
-
-    respond_to do |format|
-      format.html # new.html.erb
-      format.json { render json: @chat }
-    end
+    
   end
 
   # GET /chats/1/edit
@@ -40,17 +35,7 @@ class ChatsController < ApplicationController
   # POST /chats
   # POST /chats.json
   def create
-    @chat = Chat.new(params[:chat])
-
-    respond_to do |format|
-      if @chat.save
-        format.html { redirect_to @chat, notice: 'Chat was successfully created.' }
-        format.json { render json: @chat, status: :created, location: @chat }
-      else
-        format.html { render action: "new" }
-        format.json { render json: @chat.errors, status: :unprocessable_entity }
-      end
-    end
+    
   end
 
   # PUT /chats/1
