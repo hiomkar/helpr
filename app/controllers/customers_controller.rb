@@ -16,55 +16,44 @@ class CustomersController < ApplicationController
   end
 
   def index
-    #create chat object here
-    #@customer = Customer.new(params[:customer])
 
+    #find if customer already exists or else create new entry
     input_customer_email = params[:customer][:email]
     existing_customer = Customer.find_by_email(input_customer_email)
-
     if input_customer_email != nil && existing_customer != nil
-    @customer = existing_customer
+      @customer = existing_customer
     else
-    # create customer here
-    #@customer = Customer.new(params[:chat][:customer])
-    #@customer.save
-    #@customer = nil
-
       @customer = Customer.new
       @customer.first_name = params[:customer][:first_name]
       @customer.last_name = params[:customer][:first_name]
       @customer.email = params[:customer][:email]
       @customer.phone = params[:customer][:phone]
-
     end
-
     @customer.save
 
+    #create a new chat instance
     @chat = Chat.new
     @chat.business_id = params[:customer][:chat][:business_id]
     @chat.customer_id = @customer.id
     @chat.save
-    #@chat.customer = @customer
-
     @chat.channel = "message_channel_" + @chat.id.to_s
+    @chat.save
+
+    #find user in session or create new user in session
     @user = ChatUser.user(session, @customer.first_name)
+    #retrieve any existing messages sent to the chat room
     @messages = Message.all(:conditions => ["chat_id = ?", @chat.id.to_s])
 
-    #@chat.save
-
-    #business_url = params[:business_url]
-    #@business = Business.find_by_biz_url(business_url)
-    #@chat.business = @business
-    @customer.save
-    #params[:chat][:customer] = nil
+    #retrieve the business association of this chat
     @business = @chat.business
+
+    #select an agent of this business and route the chat to that agent
     agent_id = AgentRouter.select_agent(@business)
 
     #notify agents of incoming chat
     channel_name = "cc-new-chat-channel-"+agent_id.to_s
     event_name = "customer-call-event"
     Pusher[channel_name].trigger(event_name, {:chat_id => @chat.id.to_s, :customer_name => @chat.customer.first_name, :customer_id => @chat.customer.id})
-
 
   end
 
