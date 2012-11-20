@@ -24,7 +24,7 @@
         <div class="well">
           <h3>Hello!</h3>
           <p>We just need a few details about you and then we are ready to go!</p>
-          <%= simple_nested_form_for @customer, do |f| %>
+          <%= simple_nested_form_for @customer, :url => '/customers/index' do |f| %>
 			
 			<%= f.input :first_name, :required => true %>
 			<%= f.input :last_name, :required => true %>
