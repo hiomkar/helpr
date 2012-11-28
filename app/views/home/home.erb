@@ -1,32 +1,41 @@
 <div class="container-fluid">
-	<br>
-	<br>
-	<br>
-	<br>
-	<!-- logins for admin and agent -->
-	<div class="row-fluid">
-		<div class="span1">&nbsp;</div>
-		<div class="span3">
-			<!-- admin sign in -->
-			<%= render "partials/admin_sign_in" %>
-		</div>
-		<div class="span4">
-			<div style="text-align: center;"><%= image_tag 'logo.png', :size => '300x300' %></div>
-			<br> <br>
-  				<h1>Sign Up Now...</h1>
-  				<p>for the best small business customer service application on the web.</p>
-    			<%= link_to(new_admin_registration_path) do %>
-					<button class="btn btn-primary btn-large">
-					<span> Sign Up</span>
-					</button>
-				<% end %>
-		</div>
-		<div class="span3">
-			<!-- agent sign in -->
-			<%= render "partials/agent_sign_in" %>
-		</div>
-		<div class="span1">&nbsp;</div>
-	</div>
+  <br>
+  <br>
+  <br>
+  <br>
+  <!-- logins for admin and agent -->
+  <div class="row-fluid">
+    <div class="span1">&nbsp;</div>
+    <div class="span3">
+      <!-- admin sign in -->
+      <%= render "partials/admin_sign_in" %>
+    </div>
+    <div class="span4">
+      <div style="text-align: center;"><%= image_tag 'helpr-landing-page.png', :size => '500x500' %></div>
+      <br>
+      <div class="row-fluid">
+        <div class="span4">
+          <%= image_tag 'logo.png', :size => '200x200' %>
+        </div>
+        <div class="span8">
+          for the best small business customer service application on the web.
+        </div>
+      </div>
+      <br>
+      <div style="text-align: center;">
+        <%= link_to(new_admin_registration_path) do %>
+            <button class="btn btn-primary btn-large">
+              <span> Sign Up Today!</span>
+            </button>
+        <% end %>
+      </div>
+    </div>
+    <div class="span3">
+      <!-- agent sign in -->
+      <%= render "partials/agent_sign_in" %>
+    </div>
+    <div class="span1">&nbsp;</div>
+  </div>
 
 </div>
 
