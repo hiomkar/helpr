@@ -37,8 +37,12 @@
 
 </head>
 <body>
-<p class="notice"><%= notice %></p>
-<p class="alert"><%= alert %></p>
+<% if notice != nil %>
+	<p class="alert"><%= notice %></p>
+<% end %>
+<% if alert != nil %>
+	<p class="alert"><%= alert %></p>
+<% end %>
 
 <%= yield %>
 

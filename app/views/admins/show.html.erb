@@ -1,3 +1,19 @@
+<div class="navbar">
+  <div class="navbar-inner">
+    <div class="container">
+      <span class="brand" ><%= @admin.business.biz_name %></span>
+      <div class="navbar-content">
+        <ul class="nav">
+          <li>
+            <!-- sign out button -->
+        	<%= link_to 'Sign Out', destroy_admin_session_path, :method => :delete %>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
 <div class="container">
 
   <div class="well">

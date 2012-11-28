@@ -5,7 +5,7 @@ class Chat < ActiveRecord::Base
 
   has_many :messages
   
-  attr_accessible :business_id, :chat, :customer_id, :date_of_chat, :keywords, :screenshots, :channel
+  attr_accessible :business_id, :chat, :customer_id, :channel
    
   accepts_nested_attributes_for :customer
 

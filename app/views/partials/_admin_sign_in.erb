@@ -1,5 +1,5 @@
 <div class="well">
-<h3><span style="color: red;">Admin</span> Sign In</h3>
+<h3>Admin</h3>
 <%= form_for("admin", :url => admin_session_path) do |f| %>
   <div><%= f.label :email %>
   <%= f.email_field :email %></div>
@@ -7,14 +7,8 @@
   <div><%= f.label :password %>
   <%= f.password_field :password %></div>
 
-  <div><%= f.submit "Sign in" %></div>
-  
-  <% if  devise_mapping.rememberable? -%>
-    <div><%= f.check_box :remember_me %> <%= f.label :remember_me %></div>
-  <% end -%>
+  <div><%= f.submit "Sign in", :class => 'btn btn-primary' %></div>
+
 <% end %>
 
-<%= link_to 'Sign Out', destroy_admin_session_path, :method => :delete %> <br>
-
-<%= render "admins/shared/links" %>
 </div>

@@ -25,7 +25,8 @@
       <div class="navbar-content">
         <ul class="nav">
           <li>
-            <a href="#">Help</a>
+            <!-- sign out button -->
+        	<%= link_to 'Sign Out', destroy_agent_session_path, :method => :delete %>
           </li>
         </ul>
       </div>
@@ -119,9 +120,15 @@
             <a class="btn" href="#"><span class="btn-label">View Details</span></a>
           </div>
           <div class="span4">
-            <h2>Screenshots</h2>
+            <h2>Shared Files</h2>
             <ul>
-            	
+            	<% if !@file_urls.nil? %>
+            		<% @file_urls.each do |url| %>
+            			<li><%= url %></li>
+            		<% end %>
+            	<% else %>
+            		<p>No Files Shared</p>
+            	<% end %>
             </ul>
           </div>
         </div>

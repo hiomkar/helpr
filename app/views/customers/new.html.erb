@@ -2,7 +2,7 @@
 <div class="navbar navbar-fixed-top">
   <div class="navbar-inner">
     <div class="container">
-      <a class="brand" href="#">Helpr</a>
+      <span class="brand">Helpr</span>
       <div class="navbar-content">
         <ul class="nav "></ul>
       </div>
@@ -16,14 +16,12 @@
     </div>
   </div>
 
-  <a class="btn btn-large btn-primary btn-block visible-phone" href="#"><span class="btn-label">Sign Up Today!</span></a>
   <div class="row">
     <div class="span3"></div>
     <div class="span6">
       <div class="well">
         <div class="well">
-          <h3>Hello!</h3>
-          <p>We just need a few details about you and then we are ready to go!</p>
+          <h4>We just need a few details about you and then we are ready to go!</h4>
           <%= simple_nested_form_for @customer, :url => '/customers/index' do |f| %>
 			
 			<%= f.input :first_name, :required => true %>
@@ -33,12 +31,11 @@
 					
 			<%= f.simple_fields_for :chat, do |chat| %>
 				<%= chat.input :business_id, :as => :hidden, :input_html => { :value => @business.id }%>
-				<%= chat.input :keywords %>
 			<% end %>
 				
 				<br>
 				
-			<%= f.submit "Chat!" %> <br><br>
+			<%= f.submit "Chat", :class => 'btn btn-success'%> <br><br>
 			<% end %>
         </div>
       </div>

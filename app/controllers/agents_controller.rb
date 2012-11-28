@@ -15,11 +15,8 @@ class AgentsController < ApplicationController
     @agent = current_agent
     @chat = Chat.find(params[:chat_id])
     @user = ChatUser.user(session, current_agent.first_name)
-    @messages = Message.all(:conditions => ["chat_id = ?", @chat.id.to_s])
+      
     @phrases = Phrase.for_business(@agent.business.id)
-    
-    # get all the messages that contain screenshots from this customer's past messages
-    @messages_with_screenshots = @messages.map{|m| if !m.shared_file_file_name.nil? then m end}
     
     @show_waiting = false
 
@@ -28,12 +25,24 @@ class AgentsController < ApplicationController
     customer = Customer.find(customer_id)
     chat_history = customer.chats
     @chat_history_messages = Hash.new
+    @messages = Message.all(:conditions => ["chat_id = ?", @chat.id.to_s])
+    
+    customers_messages = Array.new
+    
     chat_history.each { |chat|
+      # add all messages from each chat to one array
+      customers_messages.concat(chat.messages)
+      
       messages = Message.all(:conditions => ["chat_id = ?", chat.id.to_s])
       if !messages.empty?
         @chat_history_messages[chat.created_at] = messages
       end
     }
+    
+    # get all the messages that contain files from this customer's past messages
+    @file_urls = customers_messages.map{|m| if !m.shared_file_file_name.nil? then m.message end}
+    
+      
     render "agents/index"
   end
 
