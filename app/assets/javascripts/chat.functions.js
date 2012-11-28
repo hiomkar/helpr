@@ -33,6 +33,10 @@ function send_message() {
 		return false;
 	}
 	
+	//validates chat message
+	var escaped_message = $('#message').val().replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+	$('#message').val(escaped_message);
+	
 	// Reset the validation stuff
 	$('#message').css({ color: '#000000' });
 	

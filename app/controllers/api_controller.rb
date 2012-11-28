@@ -27,7 +27,9 @@ class ApiController < ApplicationController
 
     user = ChatUser.user(session)
     message.user_id = user.id
-    message.message = params[:message]
+    
+    # html escape escapes <, > in rails
+    message.message = html_escape(params[:message])
 
     payload = message.attributes
     payload[:user] = user.attributes
