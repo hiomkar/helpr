@@ -1,7 +1,7 @@
 class Business < ActiveRecord::Base
   
   # removed admin_id
-  attr_accessible :biz_name, :biz_url, :end_hour, :existing_biz_url, :start_hour 
+  attr_accessible :biz_name, :biz_url, :end_hour, :start_hour 
   # Callbacks
 
   # Relationships
@@ -16,7 +16,7 @@ class Business < ActiveRecord::Base
   accepts_nested_attributes_for :admin
 
   # Validations
-  validates_presence_of :biz_name, :biz_url, :existing_biz_url
+  validates_presence_of :biz_name, :biz_url
   validates_time :end_hour, :after => :start_hour
   validates_uniqueness_of :biz_url
    

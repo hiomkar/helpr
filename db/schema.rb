@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121118031852) do
+ActiveRecord::Schema.define(:version => 20121129032831) do
 
   create_table "admins", :force => true do |t|
     t.string   "first_name"
@@ -59,11 +59,10 @@ ActiveRecord::Schema.define(:version => 20121118031852) do
   create_table "businesses", :force => true do |t|
     t.string   "biz_name"
     t.string   "biz_url"
-    t.string   "existing_biz_url"
     t.time     "start_hour"
     t.time     "end_hour"
-    t.datetime "created_at",       :null => false
-    t.datetime "updated_at",       :null => false
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "chat_users", :force => true do |t|
@@ -75,13 +74,9 @@ ActiveRecord::Schema.define(:version => 20121118031852) do
   create_table "chats", :force => true do |t|
     t.integer  "business_id"
     t.integer  "customer_id"
-    t.text     "keywords"
-    t.text     "chat"
-    t.text     "screenshots"
-    t.date     "date_of_chat"
     t.string   "channel"
-    t.datetime "created_at",   :null => false
-    t.datetime "updated_at",   :null => false
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
   end
 
   create_table "customers", :force => true do |t|

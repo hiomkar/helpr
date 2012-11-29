@@ -40,12 +40,12 @@ class AgentsController < ApplicationController
     }
 
     # get all the messages that contain files from this customer's past messages
-    @file_urls = Array.new
+    @file_messages = Array.new
 
     customers_messages.map{ |m|
       if !m.shared_file_file_name.nil?
         if !m.message.nil?
-        then @file_urls.push(m.message)
+        then @file_messages.push(m)
         end
       end
     }

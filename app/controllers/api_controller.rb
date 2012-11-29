@@ -74,11 +74,15 @@ class ApiController < ApplicationController
     user = ChatUser.user(session)
     message.user_id = user.id
     download_url = message.shared_file.url(:download => true)
-    message.message = "<a href=\""+download_url+"\">"+download_url+"</a>"
+    file_name = message.shared_file_file_name
+    puts "download url ========================= " + download_url
+    puts "file name ========================= " + file_name
+    message.message = "<a href=\""+download_url+"\">"+file_name+"</a>"
+    
+    puts "message ===================== " + message.message
 
     payload = message.attributes
     payload[:user] = user.attributes
-    payload[:shared_file] = message.shared_file.url(:download => true)
 
     if message.save
       Pusher["presence-" + chat.channel].trigger('send_message', payload)
