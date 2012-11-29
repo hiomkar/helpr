@@ -77,7 +77,7 @@ class ApiController < ApplicationController
     file_name = message.shared_file_file_name
     puts "download url ========================= " + download_url
     puts "file name ========================= " + file_name
-    message.message = "<a href=\""+download_url+"\">"+file_name+"</a>"
+    message.message = "<a href=\""+download_url+"\" target='_blank'>"+file_name+"</a>"
     
     puts "message ===================== " + message.message
 

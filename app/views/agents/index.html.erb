@@ -169,7 +169,7 @@
   <ul>
     <% if !@file_messages.nil? %>
         <% @file_messages.each do |file_message| %>
-            <li><%= file_message.message %></li>
+            <li><%=raw file_message.message %></li>
         <% end %>
     <% else %>
         <p>No Files Shared</p>
