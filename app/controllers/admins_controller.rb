@@ -53,7 +53,7 @@ class AdminsController < ApplicationController
 
     @link = root_url + "customers/new/?business=" + @business.biz_url
 
-    #---visualization--------------------
+    #---google visualization api data creation--------------------
     chats = @admin.business.chats
 
     @graph = [['x', 'Number of Chats']]
@@ -70,9 +70,6 @@ class AdminsController < ApplicationController
 
       @graph.push([hour, chats_count])
     end
-
-
-
 
     #-------------------------------------
 

@@ -1,7 +1,8 @@
 
 
 function drawVisualization(graph) {
-    alert("draw");
+    $('#reveal_graph').trigger('click');
+
     // Create and populate the data table.
     var data = google.visualization.arrayToDataTable(graph);
 

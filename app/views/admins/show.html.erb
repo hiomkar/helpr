@@ -6,7 +6,7 @@
         <ul class="nav">
           <li>
             <!-- sign out button -->
-        	<%= link_to 'Sign Out', destroy_admin_session_path, :method => :delete %>
+            <%= link_to 'Sign Out', destroy_admin_session_path, :method => :delete %>
           </li>
         </ul>
       </div>
@@ -98,19 +98,36 @@
 
     <div class="span6">
 
-      <div style="text-align: center;">
+      <h3>Word Cloud</h3>
+      <p><b>What are customers chatting about?</b></p> <br>
+      <button class="btn btn-info" onclick="javascript: $('#reveal_word_cloud').trigger('click');">Show Word Cloud</button>
+      <h3><a id="reveal_word_cloud" href="#" data-reveal-id="word_cloud_modal"></a>
+        <br>
+      </h3>
+      <div id="word_cloud_modal" class="reveal-modal" style="text-align: center;">
         <h3>Word Cloud</h3>
         <p><b>What are customers chatting about?</b></p> <br>
         <img src="<%= @data.body['url'] %>"
              height="<%= @data.body['height'] %>"
              width="<%= @data.body['width'] %>" >
+        <a class="close-reveal-modal">&#215;</a>
       </div>
 
     </div>
 
-    <div class="span6" id="graph">
-
-           <button onclick="drawVisualization(<%= @graph %>)">Draw</button>
+    <div class="span6">
+      <h3>Chat Service Statistics</h3>
+      <p><b>What hour of the day do your customers chat the most?</b></p> <br>
+      <button class="btn btn-info" onclick="drawVisualization(<%= @graph %>)">Show Statistics</button>
+      <h3><a href="#" id="reveal_graph" data-reveal-id="graph_modal"></a>
+        <br>
+      </h3>
+      <div id="graph_modal" class="reveal-modal" style="text-align: center;">
+        <h3>Chat Service Statistics</h3>
+        <p><b>What hour of the day do your customers chat the most?</b></p> <br>
+        <div id="graph"></div>
+        <a class="close-reveal-modal">&#215;</a>
+      </div>
 
     </div>
 
@@ -121,6 +138,7 @@
 <script type="text/javascript" src="http://www.google.com/jsapi"></script>
 <script type="text/javascript">
     google.load('visualization', '1', {packages: ['corechart']});
+
 </script>
 
 <script src="https://app.divshot.com/js/bootstrap.min.js"></script>
