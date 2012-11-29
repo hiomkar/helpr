@@ -75,3 +75,12 @@ function addPhrase(phrase) {
 	$('#message').val(phrase);
 	send_message();
 }
+
+function endChat(user) {
+    $('#message').val(user+" has left the conversation.");
+
+    if (confirm("Want to end this chat session?")) {
+        send_message();
+        $('#chat_interface').html('<h2>Chat ended. Thank you!</h2>')
+    }
+}

@@ -22,12 +22,12 @@
           <b>Ready to dive in?</b>&nbsp;Click the page name dropdown in the top left
           and create a new page using the embedded form.</span>
   </div>-->
-  <div class="well">
+  <div class="well" id="chat_interface" name="chat_interface">
 
     <!--pusher chat stub-->
     <div id="wrapper">
-      <div class="header">
-        <div id="title" class="member_list_title"><%= @business.biz_name %></div>
+      <div>
+        <h2 style="text-align: center;"><%= @business.biz_name %></h2>
         <span id="loading"></span>
       </div>
       <ul id="messages">
@@ -43,17 +43,25 @@
 
     <!--dropbox-->
 
-    <%= form_for Message.new, :remote => true, :url => { :controller => "api", :action => "upload_file" }, :html => { :id => "fileUploadForm", :target => "results" }  do |f| %>
+    <div class="row-fluid">
+      <div class="span6" style="text-align: center;">
 
-        <div class="controls">
-          <%= f.label :shared_file %>
-          <%= f.submit "Upload File", :class => "btn btn-primary" %>
-          <%= f.file_field :shared_file %>
+        <%= form_for Message.new, :remote => true, :url => { :controller => "api", :action => "upload_file" }, :html => { :id => "fileUploadForm", :target => "results" }  do |f| %>
 
-        </div>
-        <input type="hidden" id="chat_id" name="chat_id" value="<%= @chat.id %>" />
+            <div class="controls">
+              <%= f.submit "Upload File", :class => "btn btn-primary" %>
+              <%= f.file_field :shared_file %>
 
-    <% end %>
+            </div>
+            <input type="hidden" id="chat_id" name="chat_id" value="<%= @chat.id %>" />
+
+        <% end %>
+      </div>
+
+
+        <a class="btn btn-small btn-danger" href="javascript:endChat('<%= @user.first_name %>')"><span class="btn-label">End Chat</span></a>
+
+    </div>
 
     <div id="upload_status"></div>
 
@@ -62,7 +70,7 @@
   </div>
 
   <!--<p class="text-info lead">While using Divshot, your changes are automatically saved to the server
-    as you make them so you never have to worry about losing your work.</p>-->
+as you make them so you never have to worry about losing your work.</p>-->
 
 </div>
 

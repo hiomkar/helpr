@@ -2,9 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="46f45eb7-1cfa-4abd-9eee-5d9300891122" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/images/helpr-landing-page.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/home/home.erb" afterPath="$PROJECT_DIR$/app/views/home/home.erb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/javascripts/chat.functions.js" afterPath="$PROJECT_DIR$/app/assets/javascripts/chat.functions.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/customers_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/customers_controller.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/customers/index.html.erb" afterPath="$PROJECT_DIR$/app/views/customers/index.html.erb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/customers/new.html.erb" afterPath="$PROJECT_DIR$/app/views/customers/new.html.erb" />
     </list>
     <ignored path="helpr.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -30,7 +31,7 @@
       <file leaf-file-name="index.html.erb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/agents/index.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="95" column="75" selection-start="3251" selection-end="3251" vertical-scroll-proportion="-60.51613">
+            <state line="40" column="2" selection-start="1354" selection-end="1401" vertical-scroll-proportion="18.451612">
               <folding>
                 <element signature="n#style#0;n#h4#0;n#li#0;n#ul#0;n#div#0;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#!!top" expanded="true" />
@@ -40,23 +41,50 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="home.erb" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/views/home/home.erb">
+      <file leaf-file-name="chat.functions.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/assets/javascripts/chat.functions.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="30" column="6" selection-start="0" selection-end="1106" vertical-scroll-proportion="0.7783019">
-              <folding>
-                <element signature="n#style#0;n#div#0;n#div#2;n#div#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#2;n#div#2;n#div#0;n#div#0;n#!!top" expanded="true" />
-              </folding>
+            <state line="83" column="34" selection-start="2390" selection-end="2390" vertical-scroll-proportion="0.0">
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="agents_controller.rb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/controllers/agents_controller.rb">
+      <file leaf-file-name="chats_controller.rb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/controllers/chats_controller.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="20" column="15" selection-start="614" selection-end="614" vertical-scroll-proportion="0.0">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="customers_controller.rb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/controllers/customers_controller.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="13" column="21" selection-start="448" selection-end="448" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="new.html.erb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/customers/new.html.erb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="33" column="19" selection-start="950" selection-end="950" vertical-scroll-proportion="-10.645162">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.html.erb" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/views/customers/index.html.erb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="24" column="64" selection-start="714" selection-end="714" vertical-scroll-proportion="0.5849057">
+              <folding>
+                <element signature="n#style#0;n#h2#0;n#div#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#1;n#div#1;n#div#0;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -74,22 +102,22 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/app/models/message.rb" />
         <option value="$PROJECT_DIR$/app/assets/javascripts/uploader.js" />
-        <option value="$PROJECT_DIR$/app/assets/javascripts/chat.functions.js" />
         <option value="$PROJECT_DIR$/app/assets/javascripts/chat.js" />
         <option value="$PROJECT_DIR$/config/environments/development.rb" />
         <option value="$PROJECT_DIR$/Gemfile" />
         <option value="$PROJECT_DIR$/lib/apis/WordCloudMaker.rb" />
         <option value="$PROJECT_DIR$/app/controllers/admins_controller.rb" />
-        <option value="$PROJECT_DIR$/app/controllers/customers_controller.rb" />
         <option value="$PROJECT_DIR$/app/controllers/api_controller.rb" />
         <option value="$PROJECT_DIR$/app/views/admins/show.html.erb" />
-        <option value="$PROJECT_DIR$/app/views/customers/index.html.erb" />
         <option value="$PROJECT_DIR$/app/views/layouts/application.html.erb" />
         <option value="$PROJECT_DIR$/app/controllers/agents_controller.rb" />
         <option value="$PROJECT_DIR$/app/views/agents/index.html.erb" />
         <option value="$PROJECT_DIR$/app/views/home/home.erb" />
+        <option value="$PROJECT_DIR$/app/controllers/customers_controller.rb" />
+        <option value="$PROJECT_DIR$/app/views/customers/new.html.erb" />
+        <option value="$PROJECT_DIR$/app/views/customers/index.html.erb" />
+        <option value="$PROJECT_DIR$/app/assets/javascripts/chat.functions.js" />
       </list>
     </option>
   </component>
@@ -147,6 +175,46 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="helpr" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="helpr" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="helpr" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="helpr" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="helpr" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="customers" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -514,7 +582,7 @@
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32729805" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.15566714" sideWeight="0.68662953" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22166428" sideWeight="0.68662953" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.22166428" sideWeight="0.68662953" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.31337047" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="true" content_ui="tabs" />
@@ -583,108 +651,6 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/../../Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.2.7/lib/action_controller/metal/rescue.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="30" column="0" selection-start="1023" selection-end="1023" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/chat.functions.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="36" column="23" selection-start="1005" selection-end="1020" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/chat.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="68" selection-start="157" selection-end="158" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="uml://RailsDependency/#helpr">
-      <provider selected="true" editor-type-id="UmlEditorProvider">
-        <state>
-          <ID>RailsDependency</ID>
-          <OriginalElement>#helpr</OriginalElement>
-          <nodes>
-            <node x="273.5" y="62.5">Customer</node>
-            <node x="0.0" y="1043.5">ChatUser</node>
-            <node x="0.0" y="291.5">Business</node>
-            <node x="767.0" y="20.0">Message</node>
-            <node x="539.0" y="0.0">Chat</node>
-            <node x="239.0" y="600.5">Agent</node>
-            <node x="279.0" y="929.5">Phrase</node>
-            <node x="239.0" y="251.5">Admin</node>
-          </nodes>
-          <notes />
-          <edges>
-            <edge source="Business" target="Chat">
-              <point x="79.5" y="-91.60000000000002" />
-              <point x="239.0" y="52.0" />
-              <point x="459.0" y="52.0" />
-              <point x="-74.0" y="-47.25" />
-            </edge>
-            <edge source="Chat" target="Message">
-              <point x="74.0" y="-0.0" />
-              <point x="-107.5" y="-0.0" />
-            </edge>
-            <edge source="Business" target="Phrase">
-              <point x="79.5" y="91.60000000000002" />
-              <point x="239.0" y="964.0" />
-              <point x="-70.0" y="-0.0" />
-            </edge>
-            <edge source="Business" target="Agent">
-              <point x="79.5" y="45.80000000000001" />
-              <point x="-110.0" y="-0.0" />
-            </edge>
-            <edge source="Business" target="Admin">
-              <point x="79.5" y="-0.0" />
-              <point x="-110.0" y="-0.0" />
-            </edge>
-            <edge source="Customer" target="Chat">
-              <point x="75.5" y="-0.0" />
-              <point x="459.0" y="137.0" />
-              <point x="-74.0" y="47.25" />
-            </edge>
-            <edge source="Business" target="Customer">
-              <point x="79.5" y="-45.80000000000001" />
-              <point x="239.0" y="137.0" />
-              <point x="-75.5" y="-0.0" />
-            </edge>
-          </edges>
-          <settings layout="Hierarchic Group" zoom="0.7938848920863308" x="189.31930780641915" y="152.3108291798822" />
-          <SelectedNodes>
-            <node>Agent</node>
-          </SelectedNodes>
-          <Categories>
-            <Category>Association fields</Category>
-            <Category>Migration fields</Category>
-          </Categories>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/admins/index.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="12.580646">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/agents/view_all.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/agents/show.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="11.451612">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/agents/new.html.erb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
@@ -744,13 +710,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/customers/index.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="35" column="65" selection-start="1070" selection-end="1070" vertical-scroll-proportion="-8.806452">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/admins_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="26" column="17" selection-start="663" selection-end="663" vertical-scroll-proportion="0.0">
@@ -765,16 +724,59 @@
         </state>
       </provider>
     </entry>
+    <entry file="dbDummy://dbElement:/ccbcb4c7/b8cfcee4-d309-4b82-819d-682ba85ebc7d/..businesses">
+      <provider selected="true" editor-type-id="com.intellij.persistence.database.editor.DatabaseTableFileEditorProvider">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.2.7/lib/action_controller/metal/rescue.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="30" column="0" selection-start="1023" selection-end="1023" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.2.7/lib/action_controller/metal/implicit_render.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="4" column="0" selection-start="101" selection-end="101" vertical-scroll-proportion="0.19642857">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/home/home.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="29" column="22" selection-start="918" selection-end="918" vertical-scroll-proportion="0.7048055">
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#2;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#2;n#div#2;n#div#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/agents_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="15" selection-start="614" selection-end="614" vertical-scroll-proportion="0.0">
+        <state line="20" column="15" selection-start="614" selection-end="614" vertical-scroll-proportion="0.52991456">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/chat.functions.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="83" column="34" selection-start="2390" selection-end="2390" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/chats_controller.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/agents/index.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="95" column="75" selection-start="3251" selection-end="3251" vertical-scroll-proportion="-60.51613">
+        <state line="40" column="2" selection-start="1354" selection-end="1401" vertical-scroll-proportion="18.451612">
           <folding>
             <element signature="n#style#0;n#h4#0;n#li#0;n#ul#0;n#div#0;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#!!top" expanded="true" />
@@ -783,12 +785,26 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/home/home.erb">
+    <entry file="file://$PROJECT_DIR$/app/controllers/customers_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="30" column="6" selection-start="0" selection-end="1106" vertical-scroll-proportion="0.7783019">
+        <state line="13" column="21" selection-start="448" selection-end="448" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/customers/new.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="33" column="19" selection-start="950" selection-end="950" vertical-scroll-proportion="-10.645162">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/customers/index.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="24" column="64" selection-start="714" selection-end="714" vertical-scroll-proportion="0.5849057">
           <folding>
-            <element signature="n#style#0;n#div#0;n#div#2;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#2;n#div#2;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#h2#0;n#div#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#1;n#div#1;n#div#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
