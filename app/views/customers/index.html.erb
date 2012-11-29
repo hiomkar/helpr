@@ -22,7 +22,7 @@
           <b>Ready to dive in?</b>&nbsp;Click the page name dropdown in the top left
           and create a new page using the embedded form.</span>
   </div>-->
-  <div class="well" id="chat_interface" name="chat_interface">
+  <div class="well" id="chat_interface" name="chat_interface" style='text-align:center;'>
 
     <!--pusher chat stub-->
     <div id="wrapper">
@@ -43,8 +43,6 @@
 
     <!--dropbox-->
 
-    <div class="row-fluid">
-      <div class="span6" style="text-align: center;">
 
         <%= form_for Message.new, :remote => true, :url => { :controller => "api", :action => "upload_file" }, :html => { :id => "fileUploadForm", :target => "results" }  do |f| %>
 
@@ -56,12 +54,10 @@
             <input type="hidden" id="chat_id" name="chat_id" value="<%= @chat.id %>" />
 
         <% end %>
-      </div>
 
 
-        <a class="btn btn-small btn-danger" href="javascript:endChat('<%= @user.first_name %>')"><span class="btn-label">End Chat</span></a>
+        <a class="btn btn-small btn-danger" href="javascript:endChat('<%= @user.first_name %>', 'customer')"><span class="btn-label">End Chat</span></a>
 
-    </div>
 
     <div id="upload_status"></div>
 

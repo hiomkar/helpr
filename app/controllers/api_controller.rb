@@ -75,11 +75,7 @@ class ApiController < ApplicationController
     message.user_id = user.id
     download_url = message.shared_file.url(:download => true)
     file_name = message.shared_file_file_name
-    puts "download url ========================= " + download_url
-    puts "file name ========================= " + file_name
     message.message = "<a href=\""+download_url+"\" target='_blank'>"+file_name+"</a>"
-    
-    puts "message ===================== " + message.message
 
     payload = message.attributes
     payload[:user] = user.attributes

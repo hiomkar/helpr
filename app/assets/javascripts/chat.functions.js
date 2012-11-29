@@ -76,11 +76,18 @@ function addPhrase(phrase) {
 	send_message();
 }
 
-function endChat(user) {
+function endChat(user, role) {
     $('#message').val(user+" has left the conversation.");
 
-    if (confirm("Want to end this chat session?")) {
-        send_message();
-        $('#chat_interface').html('<h2>Chat ended. Thank you!</h2>')
-    }
+	if (role == "agent") {
+		if (confirm("Want to end this chat session?")) {
+	        location.href = '/agents';
+	    }
+	}
+	else {
+	    if (confirm("Want to end this chat session?")) {
+	        send_message();
+	        $('#chat_interface').html('<h2>Chat ended. Thank you!</h2>');
+	    }
+   	}
 }
