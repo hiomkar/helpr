@@ -6,14 +6,13 @@ class CustomersController < ApplicationController
     business_param = params[:business]
     if business_param!= nil
       @business = Business.find_by_biz_url(business_param)
-      time = Time.new
-      #if (time.hour.to_i+1).between?(@business.start_hour.hour, @business.end_hour.hour)
+      time = Time.now
+      if (time > @business.start_hour && time < @business.end_hour)
            @available = true
-      #else
+      else
          #show unavailability
-        #@availability = "We are not available at this time! You can contact us between: "+@business.start_hour.strftime("%I:%M%p").to_s+" & "+@business.end_hour.strftime("%I:%M%p").to_s
-        #redirect_to "/"
-     # end
+        @availability = "We are not available at this time! You can contact us between: "+@business.start_hour.strftime("%I:%M%p").to_s+" & "+@business.end_hour.strftime("%I:%M%p").to_s
+      end
 
       #TODO redirect to a custom error page instead of employee login page
       if @business == nil
