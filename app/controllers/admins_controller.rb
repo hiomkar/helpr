@@ -53,6 +53,30 @@ class AdminsController < ApplicationController
 
     @link = root_url + "customers/new/?business=" + @business.biz_url
 
+    #---visualization--------------------
+    chats = @admin.business.chats
+
+    @graph = [['x', 'Number of Chats']]
+
+    for hour in 0..24
+      chats_count = 0
+
+      chats.each do |chat|
+        chat_hour = chat.created_at.hour
+        if (hour == chat_hour)
+          chats_count += 1
+        end
+      end
+
+      @graph.push([hour, chats_count])
+    end
+
+
+
+
+    #-------------------------------------
+
+
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @admin }
