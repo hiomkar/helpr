@@ -27,7 +27,6 @@
 						<td>
 						<%= link_to(phrase, { :confirm => "Are you sure?", :method => :delete }) do %>
 							<button class="btn btn-danger">
-								<i class="icon-trash icon-white"></i>
 								<span class="white-text"> Delete</span>
 							</button>
 						<% end %>
@@ -46,13 +45,13 @@
 		<div class="span11">
 			<%= link_to(admin_path(current_admin)) do %>
 				<button class="btn btn-primary">
-					<i class="icon-home icon-white"></i><span class="white-text"> Home </span>
+					<span class="white-text"> Home </span>
 				</button>
 			<% end %>
 				&nbsp;
 			<%= link_to(new_phrase_path) do %>
 				<button class="btn btn-primary">
-					<i class="icon-plus-sign icon-white"></i><span class="white-text"> New Phrase </span>
+					<span class="white-text"> New Phrase </span>
 				</button>
 			<% end %>
 		</div>

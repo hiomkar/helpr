@@ -51,6 +51,8 @@ class AdminsController < ApplicationController
 
     #----------------
 
+    @link = root_url + "customers/new/?business=" + @business.biz_url
+
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @admin }

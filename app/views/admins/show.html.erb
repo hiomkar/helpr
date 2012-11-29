@@ -41,7 +41,6 @@
         <br>
         <h4>Business Info</h4>
         <p><b>Name:</b> <%= @business.biz_name %></p>
-        <p><b>URL:</b> <%= @business.biz_url %></p>
         <p><b>Hours:</b> <%= @business.start_hour.strftime("%I:%M %p")%> - <%= @business.end_hour.strftime("%I:%M %p") %></p>
       </div>
 
@@ -51,10 +50,10 @@
   <div class="row main-features">
     <div class="span4">
       <div class="well" style="height:200px;">
-        <h3>Customer View</h3>
-        <p>Click here to see what the customer sees when chatting with your agents.</p> <br>
-        <div  style="text-align: center;">
-          <button class="btn btn-primary">Customer View</button>
+        <h3>Customer Chat Link</h3>
+        <p>Give this link to your customers so they can chat with your agents.</p> <br>
+        <div  style="font-size:12px; text-align: center;">
+          <%= link_to @link, @link %>
         </div>
       </div>
     </div>
@@ -66,13 +65,11 @@
         <div  style="text-align: center;">
           <%= link_to(new_agent_registration_path) do %>
               <button class="btn btn-success">
-                <i class="icon-plus icon-white"></i>
                 <span class="white-text">Add</span>
               </button>
           <% end %> &nbsp;
           <%= link_to(agents_view_all_path) do %>
               <button class="btn btn-success">
-                <i class="icon-align-justify icon-white"></i>
                 <span class="white-text">View All</span>
               </button>
           <% end %>
@@ -87,13 +84,11 @@
         <div  style="text-align: center;">
           <%= link_to(new_phrase_path) do %>
               <button class="btn btn-info">
-                <i class="icon-plus icon-white"></i>
                 <span class="white-text">Add</span>
               </button>
           <% end %> &nbsp;
           <%= link_to(phrases_path) do %>
               <button class="btn btn-info" >
-                <i class="icon-align-justify icon-white"></i>
                 <span class="white-text">View All</span>
               </button>
           <% end %>
