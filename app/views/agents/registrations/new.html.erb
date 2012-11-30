@@ -1,33 +1,35 @@
 <div class="container-fluid">
-	<div class="row-fluid">
-		<div class="span4">&nbsp;</div>
-		<div class="span4">
-			<h2>Add agents for <%= @business.biz_name %>.</h2>
-	
-			<%= simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
-				<%= devise_error_messages! %>
-			
-				<%= f.input :first_name, :required => true %>
-				<%= f.input :last_name, :required => true %>
-				<%= f.input :email, :required => true %>
-				<%= f.input :password %>
-				<%= f.input :password_confirmation %>
-				<%= f.input :business_id, :as => :hidden, :input_html => { :value => @business.id } %>
-				
-				<br>
-				
-			  	<%= f.submit "Sign Up Agent" %> <br><br>
-			  	
-			  	<% if params[:registered] == "true"  %>
-			  		<%= link_to 'Done', admin_path(@cur_admin)%>
-			  	<% else %>
-			  		<h4>Done adding agents?<br> Next step... <%= link_to "Add Phrases", new_phrase_path %></h4>
-			  		<p>You can always add agents later...</p> 
-			  		<p>Head to the <%= @business.biz_name %> <%= link_to 'home', admin_path(@cur_admin) %> page to view your dashboard.</p>
-			  	<% end %>
-			<% end %>
-			
-		</div>
-		<div class="span4">&nbsp;</div>
-	</div>
+  <div class="row-fluid">
+    <div class="span4">&nbsp;</div>
+    <div class="span4">
+      <h2>Add agents for <%= @business.biz_name %>.</h2>
+
+      <%= simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
+          <%= devise_error_messages! %>
+
+          <%= f.input :first_name, :required => true %>
+          <%= f.input :last_name, :required => true %>
+          <%= f.input :email, :required => true %>
+          <%= f.input :password %>
+          <%= f.input :password_confirmation %>
+          <%= f.input :business_id, :as => :hidden, :input_html => { :value => @business.id } %>
+
+          <br>
+
+          <%= f.submit "Sign Up Agent", :class => "btn btn-success" %> <br><br>
+
+          <h4>Done adding agents?<br><br> Next step >> &nbsp;
+            <%= link_to (new_phrase_path) do %>
+                <button class="btn btn-info" >
+                  <span class="white-text">View All</span>
+                </button>
+            <% end %></h4>
+          <p>You can always add agents later...</p>
+          <p><%= @business.biz_name %>'s <%= link_to 'dashboard is ready!', admin_path(@cur_admin) %></p>
+
+      <% end %>
+
+    </div>
+    <div class="span4">&nbsp;</div>
+  </div>
 </div>

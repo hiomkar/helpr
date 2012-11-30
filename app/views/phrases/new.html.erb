@@ -23,7 +23,13 @@
 				<p>You can always add phrases later...</p>
 				<p>Click the 'Complete Registration' button to head to your home page.</p>
 			<% else %>
-				<%= link_to 'Done', admin_path(@cur_admin)%>
+				<%= link_to 'Done', %>
+              <h4><br><br> You are done! >> &nbsp;
+                <%= link_to admin_path(@cur_admin) do %>
+                    <button class="btn btn-info" >
+                      <span class="white-text">View All Details</span>
+                    </button>
+                <% end %></h4>
 			<% end %>
 		</div>
 		<div class="span4">&nbsp;</div>
