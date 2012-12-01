@@ -21,7 +21,7 @@ Helpr::Application.routes.draw do
   match 'agents/join_chat' => 'agents#join_chat'
   
   match 'agents/view_all' => 'agents#view_all'
-
+  
   resources :agents
 
   resources :admins

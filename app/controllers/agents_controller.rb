@@ -1,6 +1,6 @@
 class AgentsController < ApplicationController
 
-  before_filter :authenticate_agent!, :only => [:index, :join_chat, :edit, :show]
+  before_filter :authenticate_agent!, :only => [:index, :join_chat]
 
   def index
     @channel_name = "cc-new-chat-channel-"+current_agent.id.to_s
@@ -10,6 +10,10 @@ class AgentsController < ApplicationController
     @file_messages = Array.new
     
     @show_waiting = true
+  end
+  
+  def show
+    
   end
 
   def join_chat
