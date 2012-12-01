@@ -2,26 +2,11 @@
 
 // Define some variables
 var hasFocus = true;
-var people = [];
 
 // Attach some functions to track when the window gains and looses focus
 window.onblur = function () {hasFocus = false; }
 window.onfocus = function () {hasFocus = true; document.title = "Helpr"; }
 
-// Post to the server about the current status of typing
-function typing_status(status) { 
-	// We don't care about the response or even if the sever gets it.. nothing important!
-	$.post('/api/typing_status', { "chat_id":chat_id, "status":status });
-}
-
-// Update the count of people in the chat
-function updateCount(i) { 
-	// Get the current number
-	count = parseInt($('#room_count').text());
-	
-	// Add on the agument
-	$('#room_count').text(count + i);
-}
 
 // Post a message to the server to be sent through Pusher
 function send_message() { 
@@ -56,8 +41,6 @@ function send_message() {
 		$('#message-overlay').fadeOut(150);
 		$('#message').focus();
 		$('#loading').fadeOut();
-		is_typing_currently = false;
-		typing_status(false);
 	});
 	
 }

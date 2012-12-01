@@ -30,7 +30,7 @@
         <h2 style="text-align: center;"><%= @business.biz_name %></h2>
         <span id="loading"></span>
       </div>
-      <ul id="messages">
+      <ul id="messages" style='text-align: left; color: black;'>
         <% @messages.each do |message| %>
             <% user = ChatUser.find(message.user_id) %>
             <li<% if user.id == @user.id %> class="you"<% end %>><strong><%= user.first_name %></strong> said:<br><%= auto_link_urls(message.message, { :target => "_blank" }) %></li>

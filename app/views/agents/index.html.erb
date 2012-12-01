@@ -10,7 +10,7 @@
 <script type="text/javascript">
     var pusher1 = new Pusher('1295f5b9b5137f04288e'); // Replace with your app key
     var channel1 = pusher1.subscribe("<%= @channel_name %>");
-    //alert(pusher1);
+
     channel1.bind('customer-call-event', function(data) {
         alert('You have a new incoming chat from: ' + data.customer_name);
         $('#chat_list li:last').after('<li class="active"><a href="/agents/join_chat?chat_id='+data.chat_id+'&customer_id='+data.customer_id+'">Chat from: '+data.customer_name+'</a></li>');
@@ -79,7 +79,7 @@
                   <div id="title" style="text-align: center;"><h4><%= @agent.business.biz_name %></h4></div>
                   <span id="loading"></span>
                 </div>
-                <ul id="messages">
+                <ul id="messages" style='text-align: left; color: black;'>
                   <% @messages.each do |message| %>
                       <% user = ChatUser.find(message.user_id) %>
                       <li<% if user.id == @user.id %> class="you"<% end %>><h6><strong><%= user.first_name %></strong> said:<br><%= auto_link_urls(message.message, { :target => "_blank" }) %></h6></li>

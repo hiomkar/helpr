@@ -42,17 +42,6 @@ class ApiController < ApplicationController
     end
   end
 
-  def typing_status
-    if params[:chat_id] != nil && params[:status] != nil
-      chat = Chat.find(params[:chat_id])
-      user = ChatUser.user(session)
-
-      payload = { :user => user.attributes, :status => params[:status] }
-      Pusher["presence-" + chat.channel].trigger('typing_status', payload)
-    end
-    render :text => ""
-  end
-
   def authenticate
     if params[:user_id]
       user = ChatUser.find(params[:user_id])
