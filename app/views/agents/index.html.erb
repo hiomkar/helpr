@@ -22,21 +22,27 @@
     });
 </script>
 
-<div class="navbar">
-  <div class="navbar-inner">
-    <div class="container">
-      <span class="brand" ><%= @agent.business.biz_name %></span>
-      <div class="navbar-content">
-        <ul class="nav">
-          <li>
-            <!-- sign out button -->
-            <%= link_to 'Sign Out', destroy_agent_session_path, :method => :delete %>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </div>
+<div class='row-fluid'>
+	<div class="span6" style='text-align: left;'>
+		<h1>&nbsp;<%= @agent.business.biz_name %></h1>
+	</div>
+	<div class="span6" style='text-align: right;'>
+		<!-- sign out button -->
+		<br>
+		<br>
+		<%= link_to(destroy_agent_session_path, :method => :delete) do %>
+		    <button class="btn btn-danger">
+		      <span class="white-text">Sign Out</span>
+		    </button>
+		<% end %> &nbsp;&nbsp;
+	</div>
+	
+	
 </div>
+      
+
+         
+
 <div class="container-fluid">
   <div class="row-fluid">
     <div class="span2">
@@ -94,7 +100,7 @@
 
         <% else %>
 
-            <h1 style="text-align: center;"> <%= @agent.business.biz_name %> </h1>
+            <h1 style="text-align: center;"> Waiting for chats. </h1>
 
         <% end %>
 
@@ -115,19 +121,19 @@
             <p>Email: <%= @customer.email %> </p>
             <p>Phone: <%= @customer.phone %> </p>
           </div>
-
+		
+		<% @phrases.each do |phrase| %>
           <div class="well">
-            <h3>Phrases
-              <br>
-            </h3>
-            <div class="well">
-              <ul>
-                <% @phrases.each do |phrase| %>
-                    <li><p><a href="javascript:addPhrase('<%= phrase.phrase %>')"><%= phrase.phrase %></a></p></li>
-                <% end %>
-              </ul>
-            </div>
+            <h3>Phrases</h3>
+                
+                	<div class="well">
+              			<ul>
+                    		<li><p><a href="javascript:addPhrase('<%= phrase.phrase %>')"><%= phrase.phrase %></a></p></li>
+                    	</ul>
+            		</div>
+                
           </div>
+          <% end %>
           <div class="well">
             <h3><a href="#" data-reveal-id="chat_history_modal">View Chat History</a>
               <br>
@@ -151,9 +157,9 @@
 
 <div id="chat_history_modal" class="reveal-modal" style="height:400px; overflow:scroll">
   <h1>Chat History</h1>
-  <input id="search_chat" type="text" placeholder="filter by date" />
+  <input id="search_chat" type="text" placeholder="filter by keyword" />
   <h6>
-    <% if @chat_history_messages !=nil %>
+    <% if !@chat_history_messages.empty? %>
         <ul>
           <% @chat_history_messages.each do |chat, chat_messages| %>
               <div class='chat_in_history'>
@@ -167,7 +173,7 @@
           <% end %>
         </ul>
     <% else %>
-        <p> Chat history of customers </p>
+        <p> No chat history. </p>
     <% end %>
   </h6>
   <a class="close-reveal-modal">&#215;</a>
@@ -178,12 +184,12 @@
   <h1>Shared Files</h1>
   <h6>
     <ul>
-      <% if !@file_messages.nil? %>
+      <% if !@file_messages.empty? %>
           <% @file_messages.each do |file_message| %>
               <li><%=raw file_message.message %></li>
           <% end %>
       <% else %>
-          <p>No Files Shared</p>
+          <p>No files shared.</p>
       <% end %>
     </ul>
   </h6>
