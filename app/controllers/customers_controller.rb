@@ -38,6 +38,7 @@ class CustomersController < ApplicationController
       @customer.phone = params[:customer][:phone]
     end
     @customer.save
+   
 
     #create a new chat instance
     @chat = Chat.new
