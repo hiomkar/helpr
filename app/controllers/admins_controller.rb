@@ -14,6 +14,31 @@ class AdminsController < ApplicationController
     end
   end
 
+  def graph
+    #---google visualization api data creation--------------------
+    chats = Business.find(params[:business_id]).chats
+
+    graph = [['x', 'Number of Chats']]
+
+    for hour in 0..24
+      chats_count = 0
+
+      chats.each do |chat|
+        chat_hour = chat.created_at.hour
+        if (hour == chat_hour)
+          chats_count += 1
+        end
+      end
+      graph.push([hour, chats_count])
+    end
+
+    respond_to do |format|
+      format.json { render json: graph }
+    end
+
+    #-------------------------------------
+  end
+
   # GET /admins/1
   # GET /admins/1.json
   def show
@@ -21,7 +46,7 @@ class AdminsController < ApplicationController
     @business = @admin.business
     @agents = @business.agents
     @phrases = @business.phrases
-    
+
     messages_array = Message.find_by_sql "select * from messages INNER JOIN chats ON messages.chat_id=chats.id WHERE chats.business_id = "+@business.id.to_s+""
 
     messages_text_block = String.new
@@ -51,25 +76,7 @@ class AdminsController < ApplicationController
 
     @link = root_url + "customers/new/?business=" + @business.biz_url
 
-    #---google visualization api data creation--------------------
-    chats = @admin.business.chats
 
-    @graph = [['x', 'Number of Chats']]
-
-    for hour in 0..24
-      chats_count = 0
-
-      chats.each do |chat|
-        chat_hour = chat.created_at.hour
-        if (hour == chat_hour)
-          chats_count += 1
-        end
-      end
-
-      @graph.push([hour, chats_count])
-    end
-
-    #-------------------------------------
 
 
     respond_to do |format|

@@ -28,7 +28,8 @@ Helpr::Application.routes.draw do
 
   resources :businesses
 
-  
+  match 'admins/graph' => 'admins#graph'
+
   match ':controller(/:action(/:id(.:format)))'
 
   # The priority is based upon order of creation:
