@@ -6,7 +6,9 @@ class AgentsController < ApplicationController
     @channel_name = "cc-new-chat-channel-"+current_agent.id.to_s
     @agent = current_agent
     @phrases = Phrase.for_business(@agent.business.id)
-
+    @chat_history_messages = Hash.new
+    @file_messages = Array.new
+    
     @show_waiting = true
   end
 

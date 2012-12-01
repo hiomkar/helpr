@@ -1,18 +1,4 @@
-<div class="navbar">
-  <div class="navbar-inner">
-    <div class="container">
-      <span class="brand" ><%= @admin.business.biz_name %></span>
-      <div class="navbar-content">
-        <ul class="nav">
-          <li>
-            <!-- sign out button -->
-            <%= link_to 'Sign Out', destroy_admin_session_path, :method => :delete %>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</div>
+<h1 style='text-align: center;'><%= @admin.business.biz_name %></h1>
 
 <div class="container">
 
@@ -20,11 +6,18 @@
     <div class="row">
 
       <div class="span4">
-        <h3>Welcome <u><%= @admin.first_name %> <%= @admin.last_name %></u></h3>
+        <h3>Welcome, <u><%= @admin.first_name %> <%= @admin.last_name %></u></h3>
         <p>Edit information about <b><%= @business.biz_name %></b> on this page.</p>
         <%= link_to(edit_admin_registration_path) do %>
-            <button class="btn btn-inverse">
+            <button class="btn btn-info">
               <span class="white-text">Edit Info</span>
+            </button>
+        <% end %>
+        &nbsp;
+        <!-- sign out button -->
+        <%= link_to(destroy_admin_session_path, :method => :delete) do %>
+            <button class="btn btn-danger">
+              <span class="white-text">Sign Out</span>
             </button>
         <% end %>
       </div>
