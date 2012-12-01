@@ -5,7 +5,6 @@ class Agents::RegistrationsController < Devise::RegistrationsController
   # says there is no business for the current user when there should be
   def new
     @cur_admin = current_admin
-    puts current_admin.business.biz_name
     @business = @cur_admin.business
     super
   end
