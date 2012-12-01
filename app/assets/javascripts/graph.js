@@ -10,6 +10,11 @@ function drawVisualization(graph) {
     new google.visualization.LineChart(document.getElementById('graph')).
         draw(data, {curveType: "function",
             width: 500, height: 400,
-            vAxis: {maxValue: 10}}
+
+            vAxis: {title: 'No of chats escalated', maxValue: 10},
+            hAxis: {title: 'Hour in the day',
+                format: '##',
+                titleTextStyle: {color: '#5c5c5c'},
+                titlePosition: 'out'}}
     );
 }
