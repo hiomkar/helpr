@@ -17,13 +17,15 @@ class AdminsController < ApplicationController
   # GET /admins/1
   # GET /admins/1.json
   def show
-    @admin = Admin.find(params[:id])
+    @admin = current_admin
     @business = @admin.business
     @agents = @business.agents
     @phrases = @business.phrases
     
-    messages_array = Message.find_by_sql "select * from messages INNER JOIN chats ON messages.chat_id=chats.id WHERE chats.business_id = "+@business.id.to_s+""
+    messages_array = Message.for_business(@business.id)
 
+    @messages_array = messages_array
+    
     messages_text_block = String.new
 
     messages_array.each { |msg|

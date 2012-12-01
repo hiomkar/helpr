@@ -17,6 +17,7 @@ class AgentsController < ApplicationController
     @agent = current_agent
     @chat = Chat.find(params[:chat_id])
     @user = ChatUser.user(session, current_agent.first_name)
+    @business = @agent.business
 
     @phrases = Phrase.for_business(@agent.business.id)
 
@@ -27,7 +28,7 @@ class AgentsController < ApplicationController
     customer = Customer.find(customer_id)
     chat_history = customer.chats
     @chat_history_messages = Hash.new
-    @messages = Message.all(:conditions => ["chat_id = ?", @chat.id.to_s])
+    @messages = Message.for_chat(@chat.id)
 
     customers_messages = Array.new
 
@@ -35,7 +36,7 @@ class AgentsController < ApplicationController
       # add all messages from each chat to one array
       customers_messages.concat(chat.messages)
 
-      messages = Message.all(:conditions => ["chat_id = ?", chat.id.to_s])
+      messages = Message.for_chat(chat.id).for_business(@business.id)
       if !messages.empty?
         @chat_history_messages[chat.created_at] = messages
       end
