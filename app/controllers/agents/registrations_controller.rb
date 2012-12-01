@@ -5,6 +5,7 @@ class Agents::RegistrationsController < Devise::RegistrationsController
   # says there is no business for the current user when there should be
   def new
     @cur_admin = current_admin
+    puts current_admin.business.biz_name
     @business = @cur_admin.business
     super
   end
@@ -25,8 +26,9 @@ class Agents::RegistrationsController < Devise::RegistrationsController
         respond_with resource, :location => after_inactive_sign_up_path_for(resource)
       end
     else
-      clean_up_passwords resource
-      respond_with resource
+      respond_to do |format|
+        format.html { redirect_to new_agent_registration_path, notice: 'Error creating agent.' }
+      end
     end
   end
   
