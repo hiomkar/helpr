@@ -1,6 +1,6 @@
 class AgentsController < ApplicationController
 
-  before_filter :authenticate_agent!, :only => [:index, :join_chat, :edit, :show, :destroy]
+  before_filter :authenticate_agent!, :only => [:index, :join_chat, :edit, :show]
 
   def index
     @channel_name = "cc-new-chat-channel-"+current_agent.id.to_s
@@ -71,7 +71,7 @@ class AgentsController < ApplicationController
     # flash notice that says employee was removed
     flash[:notice] = "Successfully removed #{@agent.first_name} from the system."
     # go to the employees index page
-    redirect_to agents_delete_index_path
+    redirect_to admin_path(current_admin)
   end
 
 end
