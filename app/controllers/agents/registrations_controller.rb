@@ -30,12 +30,8 @@ class Agents::RegistrationsController < Devise::RegistrationsController
     end
   end
   
-  def after_sign_up_path_for(resource)
-    if (resource.is_a?(Agent))
-      new_agent_registration_path
-    else
-       super
-    end
+  def after_sign_up_path_for(agent)
+    admin_path(agent.business.admin)
   end
 
 end

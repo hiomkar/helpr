@@ -59,25 +59,48 @@
     </div>
 
     <div class="span4">
+      
+      <% if @agents.size > 0 %>
+      
       <div class="well" style="height:200px;">
         <h3>Organize Agents</h3>
         <p>Here you can manage the agents who chat with customers for your business.</p> <br>
         <div  style="text-align: center;">
           <%= link_to(new_agent_registration_path) do %>
-              <button class="btn btn-success">
+              <button class="btn btn-info">
                 <span class="white-text">Add</span>
               </button>
           <% end %> &nbsp;
           <%= link_to(agents_view_all_path) do %>
-              <button class="btn btn-success">
+              <button class="btn btn-info">
                 <span class="white-text">View All</span>
               </button>
           <% end %>
         </div>
       </div>
+      
+      <% else %>
+      
+      <div class="well" style="height:200px; background-color: #FFFF99; color: black;">
+        <h3>Organize Agents</h3>
+        <p>Here you can manage the agents who chat with customers for your business.</p> <br>
+        <div  style="text-align: center;">
+ 		  <p>You have not created any agents for your business.  Add agents now.</p>
+          <%= link_to(new_agent_registration_path) do %>
+              <button class="btn btn-info">
+                <span class="white-text">Add</span>
+              </button>
+          <% end %> &nbsp;
+        </div>
+      </div>
+      
+      <% end %>
     </div>
 
     <div class="span4">
+    		
+    <% if @phrases.size > 0 %>
+    	
       <div class="well" style="height:200px;">
         <h3>Manage Phrases</h3>
         <p>Phrases are a fast and easy way for agents to respond to customers.</p> <br>
@@ -94,6 +117,23 @@
           <% end %>
         </div>
       </div>
+      
+      <% else %>
+      
+      <div class="well" style="height:200px; background-color: #FFFF99; color: black;">
+        <h3>Manage Phrases</h3>
+        <p>Phrases are a fast and easy way for agents to respond to customers.</p> <br>
+        <div  style="text-align: center;">
+        <p>You have not created any phrases for your business.  Add phrases now.</p>
+          <%= link_to(new_phrase_path) do %>
+              <button class="btn btn-info">
+                <span class="white-text">Add</span>
+              </button>
+          <% end %> &nbsp;
+        </div>
+      </div>
+      
+      <% end %>
     </div>
 
     <div class="span6">
