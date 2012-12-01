@@ -50,6 +50,7 @@ class AgentsController < ApplicationController
       end
     }
 
+    @customer = customer
 
     render "agents/index"
   end

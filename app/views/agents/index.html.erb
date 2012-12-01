@@ -61,52 +61,60 @@
     </div>
     <div class="span6">
 
-        <div class="well" id="chat_interface" style="text-align: center;">
+      <div class="well" id="chat_interface" style="text-align: center;">
 
-          <!--pusher-->
+        <!--pusher-->
 
-          <%  if @chat != nil %>
+        <%  if @chat != nil %>
 
-              <script type="text/javascript">
-                  // Set the globals used by chat.js
-                  channel = "<%= @chat.channel %>";
-                  chat_id = "<%= @chat.id %>";
-                  user_id = "<%= @user.id %>";
-              </script>
+            <script type="text/javascript">
+                // Set the globals used by chat.js
+                channel = "<%= @chat.channel %>";
+                chat_id = "<%= @chat.id %>";
+                user_id = "<%= @user.id %>";
+            </script>
 
-              <div id="wrapper">
-                <div>
-                  <div id="title" style="text-align: center;"><h4><%= @agent.business.biz_name %></h4></div>
-                  <span id="loading"></span>
-                </div>
-                <ul id="messages" style='text-align: left; color: black;'>
-                  <% @messages.each do |message| %>
-                      <% user = ChatUser.find(message.user_id) %>
-                      <li<% if user.id == @user.id %> class="you"<% end %>><h6><strong><%= user.first_name %></strong> said:<br><%= auto_link_urls(message.message, { :target => "_blank" }) %></h6></li>
-                  <% end %>
-                </ul>
-                <div id="message-overlay"></div>
-                <textarea disabled="disabled" id="message" name="message">Type your message here and hit enter...</textarea>
-              
+            <div id="wrapper">
+              <div>
+                <div id="title" style="text-align: center;"><h4><%= @agent.business.biz_name %></h4></div>
+                <span id="loading"></span>
               </div>
-              
-			<a class="btn btn-small btn-danger" href="javascript:endChat('<%= @agent.first_name %>', 'agent')"><span class="btn-label">End Chat</span></a>
-			
-          <% else %>
+              <ul id="messages" style='text-align: left; color: black;'>
+                <% @messages.each do |message| %>
+                    <% user = ChatUser.find(message.user_id) %>
+                    <li<% if user.id == @user.id %> class="you"<% end %>><h6><strong><%= user.first_name %></strong> said:<br><%= auto_link_urls(message.message, { :target => "_blank" }) %></h6></li>
+                <% end %>
+              </ul>
+              <div id="message-overlay"></div>
+              <textarea disabled="disabled" id="message" name="message">Type your message here and hit enter...</textarea>
 
-          <h1 style="text-align: center;"> <%= @agent.business.biz_name %> </h1>
+            </div>
 
-         <% end %>
+            <a class="btn btn-small btn-danger" href="javascript:endChat('<%= @agent.first_name %>', 'agent')"><span class="btn-label">End Chat</span></a>
 
-          <!--pusher-->
+        <% else %>
 
-        </div>
+            <h1 style="text-align: center;"> <%= @agent.business.biz_name %> </h1>
+
+        <% end %>
+
+        <!--pusher-->
+
+      </div>
 
     </div>
 
     <div class="span4">
 
       <%  if @chat != nil %>
+
+          <div class="well">
+            <h3>Customer Info</h3>
+            <br>
+            <p>Name: <%= @customer.first_name %> <%= @customer.last_name %> </p>
+            <p>Email: <%= @customer.email %> </p>
+            <p>Phone: <%= @customer.phone %> </p>
+          </div>
 
           <div class="well">
             <h3>Phrases
@@ -141,23 +149,26 @@
 </div>
 <script src="https://app.divshot.com/js/bootstrap.min.js"></script>
 
-<div id="chat_history_modal" class="reveal-modal">
+<div id="chat_history_modal" class="reveal-modal" style="height:400px; overflow:scroll">
   <h1>Chat History</h1>
+  <input id="search_chat" type="text" placeholder="filter by date" />
   <h6>
     <% if @chat_history_messages !=nil %>
-      <ul>
-        <% @chat_history_messages.each do |chat, chat_messages| %>
-            <br/>
-            <h4>Chat: <%= chat %></h4>
-            <% chat_messages.each do |msg| %>
-                <li><%=raw msg.message %></li>
+        <ul>
+          <% @chat_history_messages.each do |chat, chat_messages| %>
+              <div class='chat_in_history'>
+                <br/>
+                <h4 style="color: black;"><%= chat.strftime('%b. %e, %Y') %></h4>
+                <% chat_messages.each do |msg| %>
+                    <li><%=raw msg.message %></li>
 
-            <% end %>
-        <% end %>
-      </ul>
-  <% else %>
-      <p> Chat history of customers </p>
-  <% end %>
+                <% end %>
+              </div>
+          <% end %>
+        </ul>
+    <% else %>
+        <p> Chat history of customers </p>
+    <% end %>
   </h6>
   <a class="close-reveal-modal">&#215;</a>
 </div>
@@ -166,15 +177,15 @@
 <div id="shared_files_modal" class="reveal-modal">
   <h1>Shared Files</h1>
   <h6>
-  <ul>
-    <% if !@file_messages.nil? %>
-        <% @file_messages.each do |file_message| %>
-            <li><%=raw file_message.message %></li>
-        <% end %>
-    <% else %>
-        <p>No Files Shared</p>
-    <% end %>
-  </ul>
+    <ul>
+      <% if !@file_messages.nil? %>
+          <% @file_messages.each do |file_message| %>
+              <li><%=raw file_message.message %></li>
+          <% end %>
+      <% else %>
+          <p>No Files Shared</p>
+      <% end %>
+    </ul>
   </h6>
   <a class="close-reveal-modal">&#215;</a>
 </div>
