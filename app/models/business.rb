@@ -17,7 +17,7 @@ class Business < ActiveRecord::Base
 
   # Validations
   validates_presence_of :biz_name, :biz_url
-  validates_time :end_hour, :after => :start_hour, :after_message => 'Start hour must be before end hour.'
+  validates_time :end_hour, :after => :start_hour, :after_message => 'must be after start hour.'
   validates_uniqueness_of :biz_url
    
     
