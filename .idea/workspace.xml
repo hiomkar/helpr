@@ -2,11 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="46f45eb7-1cfa-4abd-9eee-5d9300891122" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/javascripts/graph.js" afterPath="$PROJECT_DIR$/app/assets/javascripts/graph.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/admins_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/admins_controller.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/admins/show.html.erb" afterPath="$PROJECT_DIR$/app/views/admins/show.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/routes.rb" afterPath="$PROJECT_DIR$/config/routes.rb" />
+      <change type="DELETED" beforePath="C:\Omkar\workspace\helpr\app\mailers\.gitkeep" afterPath="" />
+      <change type="DELETED" beforePath="C:\Omkar\workspace\helpr\helpr" afterPath="" />
     </list>
     <ignored path="helpr.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -61,11 +58,19 @@
       <file leaf-file-name="index.html.erb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/agents/index.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="132" column="22" selection-start="4169" selection-end="4169" vertical-scroll-proportion="-3.8641975">
+            <state line="133" column="22" selection-start="4191" selection-end="4191" vertical-scroll-proportion="-3.8641975">
               <folding>
+                <marker date="1354351540570" expanded="true" signature="1750:1873" placeholder="if ... end" />
                 <element signature="n#style#0;n#ul#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#!!top" expanded="true" />
+                <marker date="1354351540570" expanded="true" signature="2673:2975" placeholder="do ... end" />
+                <marker date="1354351540570" expanded="true" signature="2779:2822" placeholder="if ... end" />
+                <marker date="1354351540570" expanded="true" signature="3540:4580" placeholder="if ... end" />
+                <marker date="1354351540570" expanded="true" signature="4042:4176" placeholder="do ... end" />
                 <element signature="n#style#0;n#div#2;n#!!top" expanded="true" />
+                <marker date="1354351540570" expanded="true" signature="4884:5393" placeholder="if ... end" />
                 <element signature="n#style#0;n#h4#0;n#div#0;n#ul#0;n#h6#0;n#div#2;n#!!top" expanded="true" />
+                <marker date="1354351540570" expanded="true" signature="5557:5777" placeholder="if ... end" />
+                <marker date="1354351540570" expanded="true" signature="5619:5710" placeholder="do ... end" />
               </folding>
             </state>
           </provider>
@@ -85,7 +90,7 @@
       <file leaf-file-name="admins_controller.rb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/controllers/admins_controller.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="18" column="42" selection-start="474" selection-end="474" vertical-scroll-proportion="0.0">
+            <state line="21" column="42" selection-start="526" selection-end="526" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -103,7 +108,7 @@
       <file leaf-file-name="show.html.erb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/admins/show.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="153" column="55" selection-start="5300" selection-end="5300" vertical-scroll-proportion="-6.645161">
+            <state line="158" column="55" selection-start="5477" selection-end="5477" vertical-scroll-proportion="-6.645161">
               <folding>
                 <element signature="n#style#0;n#h1#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
@@ -117,7 +122,7 @@
                 <element signature="n#style#0;n#div#1;n#div#2;n#div#1;n#div#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#0;n#div#1;n#div#2;n#div#1;n#div#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#0;n#div#3;n#div#1;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#p#0;n#div#0;n#div#3;n#div#1;n#div#0;n#!!top" expanded="true" />
+                <marker date="1354351540581" expanded="true" signature="4816:4831" placeholder="..." />
                 <element signature="n#style#0;n#div#0;n#div#4;n#div#1;n#div#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#p#0;n#div#0;n#div#4;n#div#1;n#div#0;n#!!top" expanded="true" />
               </folding>
@@ -128,7 +133,7 @@
       <file leaf-file-name="graph.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/assets/javascripts/graph.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="6" column="0" selection-start="164" selection-end="164" vertical-scroll-proportion="0.27557412">
+            <state line="6" column="0" selection-start="164" selection-end="164" vertical-scroll-proportion="0.2875817">
               <folding />
             </state>
           </provider>
@@ -220,46 +225,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="helpr" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="helpr" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="helpr" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="phrases" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="helpr" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="helpr" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -562,14 +527,14 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1456" height="854" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.30640668" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.1527977" sideWeight="0.7660167" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.16355811" sideWeight="0.7660167" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.16355811" sideWeight="0.70194983" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.29805014" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="true" content_ui="tabs" />
@@ -638,13 +603,6 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/config/initializers/devise.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="36" column="7" selection-start="2047" selection-end="2047" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/agents/registrations_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="2" column="17" selection-start="111" selection-end="111" vertical-scroll-proportion="0.0">
@@ -677,11 +635,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/agents/index.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="132" column="22" selection-start="4169" selection-end="4169" vertical-scroll-proportion="-3.8641975">
+        <state line="133" column="22" selection-start="4191" selection-end="4191" vertical-scroll-proportion="-3.8641975">
           <folding>
+            <marker date="1354351540570" expanded="true" signature="1750:1873" placeholder="if ... end" />
             <element signature="n#style#0;n#ul#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#!!top" expanded="true" />
+            <marker date="1354351540570" expanded="true" signature="2673:2975" placeholder="do ... end" />
+            <marker date="1354351540570" expanded="true" signature="2779:2822" placeholder="if ... end" />
+            <marker date="1354351540570" expanded="true" signature="3540:4580" placeholder="if ... end" />
+            <marker date="1354351540570" expanded="true" signature="4042:4176" placeholder="do ... end" />
             <element signature="n#style#0;n#div#2;n#!!top" expanded="true" />
+            <marker date="1354351540570" expanded="true" signature="4884:5393" placeholder="if ... end" />
             <element signature="n#style#0;n#h4#0;n#div#0;n#ul#0;n#h6#0;n#div#2;n#!!top" expanded="true" />
+            <marker date="1354351540570" expanded="true" signature="5557:5777" placeholder="if ... end" />
+            <marker date="1354351540570" expanded="true" signature="5619:5710" placeholder="do ... end" />
           </folding>
         </state>
       </provider>
@@ -780,7 +746,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/admins/show.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="153" column="55" selection-start="5300" selection-end="5300" vertical-scroll-proportion="-6.645161">
+        <state line="158" column="55" selection-start="5477" selection-end="5477" vertical-scroll-proportion="-6.645161">
           <folding>
             <element signature="n#style#0;n#h1#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
@@ -794,7 +760,7 @@
             <element signature="n#style#0;n#div#1;n#div#2;n#div#1;n#div#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#div#1;n#div#2;n#div#1;n#div#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#div#3;n#div#1;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#p#0;n#div#0;n#div#3;n#div#1;n#div#0;n#!!top" expanded="true" />
+            <marker date="1354351540581" expanded="true" signature="4816:4831" placeholder="..." />
             <element signature="n#style#0;n#div#0;n#div#4;n#div#1;n#div#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#p#0;n#div#0;n#div#4;n#div#1;n#div#0;n#!!top" expanded="true" />
           </folding>
@@ -819,14 +785,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/admins_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="42" selection-start="474" selection-end="474" vertical-scroll-proportion="0.0">
+        <state line="21" column="42" selection-start="526" selection-end="526" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/assets/javascripts/graph.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="0" selection-start="164" selection-end="164" vertical-scroll-proportion="0.27557412">
+        <state line="6" column="0" selection-start="164" selection-end="164" vertical-scroll-proportion="0.2875817">
           <folding />
         </state>
       </provider>
