@@ -2,24 +2,6 @@ class ApiController < ApplicationController
 
   protect_from_forgery :except => :authenticate # stop rails CSRF protection for this action
 
-  def update_first_name
-    if params[:user_id] != nil && params[:first_name] != nil
-      user = ChatUser.find(params[:user_id])
-      old_first_name = user.first_name
-      user.first_name = params[:first_name]
-      if user.save
-        chat = Chat.find(params[:chat_id])
-        payload = { :old_first_name => old_first_name, :first_name => user.first_name, :user_id => user.id }
-        Pusher["presence-" + chat.channel].trigger('updated_first_name', payload)
-        render :text => "SAVED"
-      else
-        render :text => "ERROR"
-      end
-    else
-      render :text => "ERROR"
-    end
-  end
-
   def post_message
     chat = Chat.find(params[:chat_id])
     message = Message.new
