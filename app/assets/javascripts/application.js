@@ -15,7 +15,10 @@
 //= require_tree .
 //= require twitter/bootstrap
 
+
 $(document).ready(function(){
+	
+	//hides or shows chat history based on filter
     $('#search_chat').keypress(function() {
         console.log('keypress');
 
