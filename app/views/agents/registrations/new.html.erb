@@ -11,8 +11,8 @@
 			<%= f.input :first_name, :required => true %>
 			<%= f.input :last_name, :required => true %>
 			<%= f.input :email, :required => true %>
-			<%= f.input :password %>
-			<%= f.input :password_confirmation %>
+			<%= f.input :password, :required => true %>
+			<%= f.input :password_confirmation, :required => true %>
 			<%= f.input :business_id, :as => :hidden, :input_html => { :value => @business.id } %>
 			<br>
 			<%= f.submit "Sign Up Agent", :class => "btn btn-success" %>
