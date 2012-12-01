@@ -80,7 +80,7 @@ class BusinessesController < ApplicationController
     @business.destroy
 
     respond_to do |format|
-      format.html { redirect_to businesses_url }
+      format.html { redirect_to root_url }
       format.json { head :no_content }
     end
   end
